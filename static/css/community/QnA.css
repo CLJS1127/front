@@ -1,3 +1,23 @@
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-display: swap;
+    src: url("/static/font/Pretendard-Regular.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-display: swap;
+    src: url("/static/font/Pretendard-SemiBold.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-display: swap;
+    src: url("/static/font/Pretendard-Bold.subset.woff2") format(woff2);
+}
+
+
 * {
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif !important;
 }
@@ -33,11 +53,6 @@ button {
 }
 button {
     outline: none;
-}
-
-a, a:link, a:visited {
-    color: #999;
-    text-decoration: none;
 }
 
 #headerWrap {
@@ -80,9 +95,6 @@ a, a:link, a:visited {
     width: 1260px;
 }
 
-#headerWrap.gnbTheme1200 .headInner, #headerWrap.gnbTheme1200 .headNavBar .navInner {
-    width: 1200px;
-}
 #headerWrap #header .headInner .jkLogo {
     height: 70px;
     margin: 0;
@@ -112,15 +124,6 @@ a, a:link, a:visited {
     border: 2px solid #003cff;
     border-radius: 8px;
     background-color: #fff;
-}
-
-.skip, .blind {
-    position: absolute !important;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    clip: rect(0 0 0 0);
-    margin: -1px;
 }
 
 form, fieldset, iframe, button {
@@ -228,6 +231,24 @@ legend {
     height: 1px;
     clip: rect(0 0 0 0);
     margin: -1px;
+}
+
+#headerWrap #header .headNavBar .jkNavArea .serviceNav .navItem .linkItem {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    line-height: 65px;
+}
+
+.blind, .skip, legend {
+    position: absolute !important;
+    top: -5000em;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0;
 }
 
 #headerWrap #header .headInner .search fieldset .autoSearchStop .searchStopDesc {
@@ -560,14 +581,6 @@ legend {
     box-sizing: initial;
     height: 64px;
     border-bottom: 1px solid #e8e8e8;
-}
-
-#headerWrap #header .headNavBar, #headerWrap #header .headNavBar .navInner {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: flex;
-    position: relative;
 }
 
 #headerWrap #header .headNavBar, #headerWrap #header .headNavBar .navInner {
