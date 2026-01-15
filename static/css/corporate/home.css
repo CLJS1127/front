@@ -23,7 +23,6 @@
     margin: 0;
     border: 0;
     box-sizing: border-box;
-
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif !important;
 }
 html {
@@ -32,7 +31,6 @@ html {
 }
 body{
     background: #f3f5f7;
-
     width: 100%;
     color: #333;
     font-size: 13px;
@@ -134,7 +132,6 @@ address, caption, em {
     white-space: nowrap;
     text-overflow: ellipsis;
     font-size: 14px;
-    /* letter-spacing: 0; */
     color: #171717;
     line-height: 52px;
 }
@@ -487,8 +484,11 @@ address, caption, em {
     border-left-color: rgba(0, 0, 0, 0);
     border-radius: 0 0 0 14px;
 }
-
-
+.service-section .service-list li:hover button {
+    color: #39f;
+    border-color: #39f !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
+}
 
 /* 공지사항, FAQ, 고객센터 */
 .bottom-article {
