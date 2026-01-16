@@ -2,6 +2,25 @@
     --tab-length-by-column : 5;
 }
 
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 400;
+    font-display: swap;
+    src: url("../../font/Pretendard-Regular.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 600;
+    font-display: swap;
+    src: url("../../font/Pretendard-SemiBold.subset.woff2") format(woff2);
+}
+@font-face {
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-display: swap;
+    src: url("../../font/Pretendard-Bold.subset.woff2") format(woff2);
+}
+
 .stSpImg, .hd .totalNum:after, .gjContainer .explainLists .txViewNum:before, .goodjobnews-list li .txViewNum:before, .stSpAfter:after, .stSpBefore:before, .pageTab .tabs li a .tx:before {
     background: url(/content/images/ver_1/star/sp_star.png?v=20171204) 0 0 no-repeat;
 }
