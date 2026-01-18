@@ -186,8 +186,8 @@ address, caption, em {
     letter-spacing: -.5px;
     /* line-height: 30px; */
 }
-.start-section .border-round-section .title-box:before {
-    /* display: block; */
+/* .start-section .border-round-section .title-box:before {
+    display: block;
     width: 66px;
     height: 74px;
     margin-right: 24px;
@@ -195,7 +195,7 @@ address, caption, em {
     background-image: url("https://i.jobkorea.kr/content/images/corporate/main_v2/icon_jobko_offline.png");
     background-size: 100%;
     background-position: 50%;
-}
+} */
 .start-section .border-round-section .button-box, .start-section .border-round-section .button-box a {
     display: flex;
     align-items: center;
@@ -492,6 +492,8 @@ address, caption, em {
     color: #39f;
     border-color: #39f !important;
     box-shadow: 0 0 20px rgba(0, 0, 0, .0784313725);
+    position: relative;
+    z-index: 1;
 }
 
 /* 공지사항, FAQ, 고객센터 */
