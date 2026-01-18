@@ -1,11 +1,19 @@
 // 알림창 다음/이전 버튼
 DOMTokenList.prototype.includes = Array.prototype.includes;
 
-const swiperWrapper = document.querySelector(".swiper-wrapper");
-const nextButton = document.querySelector(".swiper-button-next");
-const prevButton = document.querySelector(".swiper-button-prev");
+const swiperWrapper = document.querySelector(
+    ".notification-modal .swiper-wrapper",
+);
+const nextButton = document.querySelector(
+    ".notification-modal .swiper-button-next",
+);
+const prevButton = document.querySelector(
+    ".notification-modal .swiper-button-prev",
+);
 const swipterButtons = [nextButton, prevButton];
 let count = 0;
+
+console.log(swiperWrapper);
 
 swiperWrapper.style.transform = `translate(0px)`;
 swiperWrapper.style.width = `${notifications.length * 430}px`;
@@ -14,7 +22,7 @@ swipterButtons[1].classList.add("swiper-button-disabled");
 
 // 알림창 닫기 버튼
 const notificationModal = document.querySelector(".notification-modal");
-const closeButton = document.querySelector(".close-button");
+const closeButton = document.querySelector(".notification-modal .close-button");
 
 // 이전/다음 버튼
 swipterButtons.forEach((button) => {
