@@ -2237,6 +2237,10 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     background-position: -216px -264px;
 }
 
+.tooltip-open .tooltip-layer {
+    display: block;
+}
+
 .answer-util-item {
     display: inline-block;
     margin-right: 13px;
