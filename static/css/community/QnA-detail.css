@@ -163,7 +163,7 @@ a:hover, a:active, a:focus {
 .qnaSpB:before, .qnaSpA:after, .qnaSpM:before, .qnaSpM:after {
     content: "";
     display: inline-block;
-    background-image: url(/static/images/sp_qna_recolor.png);
+    background-image: url(/static/images/sp_qna_recolor_star20_fixed.png);
     background-repeat: no-repeat;
     background-position: 0 0;
     vertical-align: middle;
@@ -1239,6 +1239,10 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     background-position: -75px -434px;
 }
 
+.answer-util-item .icon-emoticon.on::before {
+    background-position: -75px -459px;
+}
+
 .layer-box-wrap{
     display: none;
     padding: 30px 28px;
@@ -1250,6 +1254,10 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     width: 732px;
     padding: 0;
     z-index: 10;
+}
+
+.layer-box-wrap.open {
+    display: block;
 }
 
 .lyViewBoard .emotion-layer {
@@ -1443,8 +1451,14 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     font-size: 0;
 }
 
-.lyViewBoard .emotion-area {
-    height: 260px;
+.emotion-item img {
+    width: 100%;
+}
+
+.layer-box-wrap .btn-layer-close:before {
+    width: 17px;
+    height: 17px;
+    background-position: -262px -285px;
 }
 
 .layer-box-wrap .btn-layer-close{
@@ -1683,4 +1697,262 @@ input[type=text], input[type=password], input[type=file], input[type=date], inpu
     transition: opacity 1s;
 }
 
+.viewListWrap .headerWrap .checkBx label:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 10px;
+    height: 9px;
+    background-position: -216px -209px;
+}
 
+.mtuPopup {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    margin-left: -390px;
+    width: 780px;
+    border: 1px solid #565d79;
+    box-sizing: border-box;
+    background-color: #fff;
+    z-index: 9001;
+}
+
+.lyQnaReport .mtuPopup {
+    position: fixed;
+    top: 50%;
+    width: 443px;
+    margin: -233px 0 0 -221px;
+    z-index: 10001;
+}
+
+.qnaWrapBody .mtuLyWrap .mtuPopup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 10001;
+    overflow: hidden;
+}
+
+.mtuPopup > .lyHd {
+    padding: 50px 49px 15px;
+    font-size: 32px;
+    letter-spacing: -1px;
+    color: #000;
+}
+
+.mtuPopup > .lyCnt {
+    padding: 0 49px;
+}
+
+.lyQnaReport .mtuPopup .reportBx {
+    padding-top: 12px;
+    border-top: 1px solid #c1c3c7;
+}
+
+.radioCommWrap label {
+    position: relative;
+    font-size: 14px;
+    letter-spacing: 0px;
+}
+
+.radioCommWrap input[type=radio] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-position: -195px -90px;
+    vertical-align: middle;
+}
+
+.radioCommWrap input[type=radio]:checked + label:before {
+    background-position: -195px -113px;
+}
+
+.radioCommWrap label > span {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.radioCommWrap input[type=radio] + label > span {
+    margin: 0 8px;
+}
+
+.radioCommWrap:after {
+    content: "";
+    clear: both;
+    display: block;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+
+.lyQnaReport .reasonBx {
+    margin-top: 18px;
+}
+
+.qnaFormBx {
+    position: relative;
+}
+
+.qnaTxaBx {
+    border: 1px solid #e1e2e6;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.lyQnaReport .reasonBx .qnaTxaBx {
+    height: 70px;
+    padding: 2px 2px;
+    background-color: #fcfdff;
+    border-color: #e1e2e6;
+    border-radius: 3px;
+}
+
+.qnaFormBx .ph {
+    position: absolute;
+    left: 21px;
+    top: 12px;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #b0b0b0;
+    line-height: 25px;
+}
+
+.lyQnaReport .reasonBx .qnaTxaBx .ph {
+    left: 13px;
+    top: 7px;
+    font-size: 13px;
+    letter-spacing: 0px;
+}
+
+.qnaFormBx .qnaIptTx, .qnaTxaTx {
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #333;
+    background-color: transparent;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.qnaTxaTx {
+    overflow: auto;
+    width: 100%;
+    padding: 11px 21px;
+    line-height: 25px;
+    border: 0;
+    resize: none;
+    outline: none;
+}
+
+.lyQnaReport .reasonBx .qnaTxaTx {
+    height: 100%;
+    padding: 8px 13px;
+    background-color: transparent;
+}
+
+.btnCommWrap {
+    overflow: hidden;
+    text-align: center;
+}
+
+.lyQnaReport .btnCommWrap {
+    margin: 20px 0 30px;
+    font-size: 0;
+    text-align: center;
+}
+
+.btnCommWrap button {
+    margin: 0 5px;
+    width: 135px;
+    height: 50px;
+    background: #7BA882;
+    border: 1px solid #7BA882;
+    box-sizing: border-box;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #fff;
+    line-height: 50px;
+}
+
+.btnCommWrap button.bg_white {
+    background: #fff;
+    border-color: #d7d8d9;
+    color: #666;
+}
+
+.mtuPopup .butClose {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 27px;
+    height: 27px;
+    background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20id%3D%22close-%26%23xB808%3B%26%23xC774%3B%26%23xC5B4%3B_1%22%20x%3D%220%22%20y%3D%220%22%20viewBox%3D%220%200%2015%2015%22%20xml%3Aspace%3D%22preserve%22%20width%3D%2232%22%20height%3D%2232%22%3E%3Cstyle%3E.st0%7Bfill%3Anone%3Bstroke%3A%23565d79%3Bstroke-width%3A0.5%3Bstroke-miterlimit%3A10%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M15%200L0%2015M0%200l15%2015%22%2F%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mtuLyWrap .dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+
+.mtuLyWrap .dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .4;
+    filter: alpha(opacity=40);
+    z-index: 2000;
+}
+
+.lyQnaReport .dimmed {
+    z-index: 10000;
+}
+
+.qnaWrapBody .mtuLyWrap .dimmed {
+    z-index: 10000;
+}
+
+.lyQnaReport .reportBx li {
+    margin: 5px 0 0 0;
+}
+
+
+.viewContWrap .inputBox .notice-box-wrap {
+    margin-top: 20px;
+    padding: 25px 20px;
+    background: #f9f9f9;
+}
+
+.viewContWrap .inputBox .notice-box-wrap li:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin: -1px 7px 0 0;
+    width: 2px;
+    height: 2px;
+    background: #999;
+}
+
+.viewContWrap .inputBox .notice-box-wrap li {
+    position: relative;
+    padding-left: 10px;
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #999;
+    line-height: 1.8;
+}
