@@ -1100,6 +1100,14 @@ input[type="number"] {
     background-position: -216px -127px;
 }
 
+.lyViewBoard i[class^="ico"]:before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+}
+
 .lyViewBoard .infoBx .proThumb {
     overflow: hidden;
     float: left;
@@ -2219,6 +2227,10 @@ input[type="number"] {
     background-color: #fafafa;
 }
 
+.answer-util-item .icon-photo::before {
+    background-position: -50px -434px;
+}
+
 .viewListWrap .cmtArea {
     background: #fafafa;
     border-top: 1px solid #ebecf0;
@@ -2367,6 +2379,16 @@ input[type="number"] {
     height: 100%;
 }
 
+.button.icon-photo.qnaSpB:before {
+    width: 18px;
+    height: 18px;
+}
+
+.button.icon-photo.qnaSpB {
+    font-size: 0;
+}
+
+
 .answer-util-item .icon-emoticon:before {
     background-position: -75px -434px;
 }
@@ -2375,7 +2397,7 @@ input[type="number"] {
     background-position: -75px -434px;
 }
 
-.answer-util-item .icon-photo::before {
+.answer-util-item label .icon-photo::before {
     background-position: -50px -434px;
 }
 
@@ -2383,7 +2405,7 @@ input[type="number"] {
     background-position: -75px -459px;
 }
 
-.answer-util-item .icon-photo.on::before {
+.answer-util-item label .icon-photo.on::before {
     background-position: -50px -459px;
 }
 
