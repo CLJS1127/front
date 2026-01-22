@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기업정보관리 | 잡코리아</title>
+    <link rel="stylesheet" href="/static/css/corporate/profile.css">
+</head>
+<body class="mtcSubInfo mtcSubCompany">
+    <div id="wrap">
+        <div class="sideTrue devUseTopBtn" id="container">
+            <!-- 어사이드 -->
+            <div id="sideNav" class="devCorpLogin">
+                <!-- 기업 정보 관리 메뉴 -->
+                <div class="nav">
+                    <ul>
+                        <!-- server, javascript: 해당 페이지일 때, on 클래스 추가 -->
+                        <li class="devCorpInfoDetail on">
+                            <a href="">기업정보관리</a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">회원정보관리</a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">로그인관리 </a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">정보 수신 설정</a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">2단계 인증 관리</a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">2단계 인증 내역</a>
+                        </li>
+                        <li class="devCorpInfoDetail">
+                            <a href="">기업인증</a>
+                        </li>
+                        <li>
+                            <a href="">전문채용관 신청</a>
+                        </li>
+                        <li>
+                            <a href="">슈퍼기업관 신청</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 광고 -->
+                <div class="adLeftBx">
+                    <div class="ad-container">
+                        <a href="javascript:;" class="imgAdBnnr">
+                            <img src="https://ads.jobkorea.co.kr/ads/pc/images/202512/54af1f5a-b9e0-45bb-8f00-cb06f2d01441.png">
+                            <!-- onerror -->
+                        </a>
+                    </div>
+                </div>
+                <div class="adLeftBx">
+                    <a href="">
+                        <img src="https://i.jobkorea.kr/content/images/banner/lnb_certify_banner.png">
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- 복리후생 스타일 -->
+            <div id="content">
+                <div class="companyContent">
+                    <div class="companyMngWrap">
+                        <form id="devInfoForm" name="form" method="post">
+                            <!-- 기업정보관리 입력폼 -->
+                            <fieldset>
+                                <div class="artCompany artCoSummary">
+                                    <div class="infoTbBx">
+                                        <div class="tbRow">
+                                            <div class="tbCell tbSum">
+                                                <p class="name">
+                                                    <!-- server: click 시, 기업 정보 페이지로 이동 -->
+                                                    <a href="" target="_blank">기업이름</a>
+                                                </p>
+                                                <dl class="info">
+                                                    <dt>사업자번호</dt>
+                                                    <dd>111-11-11111</dd>
+                                                    <dt>상장여부</dt>
+                                                    <dd>비상장</dd>
+                                                </dl>
+                                            </div>
+                                            <div class="tbCell tbLogo">
+                                                <button type="button" class="infoBtnB infoBtnUp" id="devLogoUp"><span>로고업로드</span></button>
+                                                <div class="logoUploadWrap">
+                                                    <!-- iframe(모달) -->
+                                                </div>
+                                            </div>
+                                            <!-- javascript: 로고 업로드 버튼 클릭 시, on 클래스 추가(모달) -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="artCompany artCoBasic">
+                                    <h3 class="info_hd_3">기본정보</h3>
+                                    <div class="infoTbBx">
+                                        <div class="tbRow">
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap ok">
+                                                    <div class="schInpType">
+                                                        <label class="ph devInputTxExam" for="txtBossName">
+                                                            대표자명
+                                                            <span class="point">*</span>
+                                                        </label>
+                                                        <!-- server: 불러올 정보가 있다면 input의 value에 값 넣기 -->
+                                                        <input type="text" id="txtBossName" class="inpDefault devAnimPh" name="Boss_Name" value="" maxlength="25">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 ok 추가, 필수 정보를 입력하지 않을 시 error 추가 -->
+                                            </div>
+
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label class="ph devInputTxExam" for="devOpenDate">
+                                                            설립일
+                                                            <span class="point">*</span>
+                                                        </label>
+                                                        <input type="text" id="devOpenDate" class="inpDefault devAnimPh" name="Open_Date" maxlength="10">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 ok 추가, 필수 정보를 입력하지 않을 시 error 추가 -->
+                                            </div>
+
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="selType devAnimLy">
+                                                        <button type="button" class="btnSelType mtcBtnA" id="devCoType">
+                                                            <span class="txCate">
+                                                                기업형태
+                                                                <span class="point">*</span>
+                                                            </span>
+                                                            <!-- 선택한 text 들어갈 영역 -->
+                                                            <span id="Company_Name" class="txResult devTxResult"></span>
+                                                        </button>
+                                                        <!-- 레이어 영역 -->
+                                                        <div class="lyElBx devLyElBx">
+                                                            <ul class="selTypeList">
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">중소기업</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">중견기업</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">대기업</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">대기업 계열사·자회사</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">벤처기업</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">외국계(외국 투자기업)</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">국내 공공기관·공기업</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">외국계(외국 법인기업)</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">비영리단체·교육재단</button>
+                                                                </li>
+                                                                <li class="devCoTypeItem">
+                                                                    <button type="button">외국 기관·비영리기구</button>
+                                                                </li>
+                                                                <!-- javascript: 버튼 선택 시, 선택한 버튼에 on 추가 -->
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: 버튼 선택 시 on 추가, 입력 완료 시 ok 추가, 필수 정보를 입력하지 않을 시 error 추가 -->
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="tbRow" id="devForeignCoArea" style="display:none;">
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType devFocusoutExcept">
+                                                        <label class="ph" for="devNation">
+                                                            외국계 국가정보
+                                                            <span class="point">*</span>
+                                                        </label>
+                                                        <input type="text" id="devNation" class="inpDefault devAnimPh">
+                                                        <div class="lyElBx" id="devNationSearchContainer" style="display: none;">
+                                                            <!--// 검색 전 -->
+                                                            <!-- <div class="keySchNtc" id="devKeySchNtc" style="display: none;">
+                                                                <p>찾으시려는 국가명을 입력해주세요</p>
+                                                            </div> -->
+                                                            <!-- javascript: input 클릭 시 display: table;(toggle) -->
+                                                            <!--// 검색 시 -->
+                                                            <div class="keySchType">
+                                                                <ul id="devNationSearchResult">
+                                                                    <li><a class="devNationSearchItem" style="cursor:pointer"><strong></strong>가<strong></strong>나<strong></strong></a></li>
+                                                                </ul>
+                                                                <!-- javascript: 처음엔 빈 리스트, input에 입력을 했다가 전부 지우면 li들 생성 -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 .ok 추가, 필수 정보를 입력하지 않았을 경우 error 추가 -->
+                                            </div>
+                                            <div class="tbCell"></div>
+                                            <div class="tbCell"></div>
+                                        </div>
+                                        <!-- javascript: 외국 기업 선택 시, display: block -->
+                                        
+                                        <div class="tbRow">
+                                            <div class="tbCell tbPart">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="selType devAnimLy">
+                                                        <button type="button" class="btnSelType mtcBtnA">
+                                                            <span class="txCate">
+                                                                업종
+                                                                <span class="point">*</span>
+                                                            </span>
+                                                            <!-- 선택한 text 들어갈 영역 -->
+                                                            <span id="Industry_Name" class="txResult devTxResult"></span>
+                                                        </button>
+                                                        <!-- 레이어 영역 -->
+                                                        <div class="lyElBx devLyElBx">
+                                                            <div class="selTypeList">
+                                                                <ul>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">서비스업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">금융·은행업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">IT·정보통신업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">판매·유통업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">제조·생산·화학업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">교육업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">건설업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">의료·제약업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">미디어·광고업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">문화·예술·디자인업</button>
+                                                                    </li>
+                                                                    <li class="devPartCtgr">
+                                                                        <button type="button">기관·협회</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">호텔·여행·항공</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">음식료·외식·프랜차이즈</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">스포츠·여가·레저</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">뷰티·미용</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">콜센터·아웃소싱·기타</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">정비·A/S·카센터</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">렌탈·임대·리스</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">서치펌·헤드헌팅</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">시설관리·보안·경비</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">웨딩·상조·이벤트</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">은행·금융</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">캐피탈·대출</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">증권·보험·카드</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">솔루션·SI·CRM·ERP</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">웹에이전시</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">쇼핑몰·오픈마켓·소셜커머스</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">포털·컨텐츠·커뮤니티</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">네트워크·통신서비스</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">정보보안</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">컴퓨터·하드웨어·장비</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">게임·애니메이션</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">모바일·APP</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">IT컨설팅</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">백화점·유통·도소매</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">무역·상사</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">물류·운송·배송</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">전기·전자·제어</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">반도체·디스플레이·광학</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">기계·기계설비</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">자동차·조선·철강·항공</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">금속·재료·자재</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">화학·에너지·환경</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">섬유·의류·패션</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">생활화학·화장품</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">생활용품·소비재·기타</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">목재·제지·가구</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">식품가공</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">농축산·어업·임업</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">학교(초·중·고·대학·특수)</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">유아·유치원·어린이집</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">학원·어학원·교육원</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">학습지·방문교육</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">건축·설비·환경</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">건설·시공·토목·조경</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">인테리어·자재</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">부동산·중개·임대</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">의료(병원분류별)</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">의료(진료과별)</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">의료(간호·원무·상담)</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">제약·보건·바이오</button>
+                                                                    </li>
+                                                                    <li class="devPartItem">
+                                                                        <button type="button">사회복지·요양</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">방송·케이블·프로덕션</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">신문·잡지·언론사</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">광고·홍보·전시</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">영화·음반·배급</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">연예·엔터테인먼트</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">출판·인쇄·사진</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">문화·공연·예술</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">디자인·CAD</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <ul class="devPartList">
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">공기업·공공기관</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">협회·단체</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">컨설팅·연구·조사</button>
+                                                                    </li>
+                                                                    <li class="devPartItem ">
+                                                                        <button type="button">회계·세무·법무</button>
+                                                                    </li>
+                                                                </ul>
+                                                                <!-- javascript: 리스트 선택 시 devOn 추가 -->
+                                                                    <!-- javascript: 리스트안의 버튼 선택 시 on 추가 -->
+                                                            </div>
+                                                            <p class="selTypeBtn">
+                                                                <button type="button" class="mtcBtnBd devLyClose">
+                                                                    <span>취소</span>
+                                                                </button>
+                                                                <button type="button" class="mtcBtnBg" id="devApplyPart">
+                                                                    <span>확인</span>
+                                                                </button>
+                                                            </p>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: 버튼 선택 시 on 추가, 리스트 선택 완료 시 .ok 추가, 필수 정보를 입력하지 않았을 경우 error 추가 -->
+                                            </div>
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label class="ph" for="devWorkerCnt">
+                                                            사원수
+                                                            <span class="point">*</span>
+                                                        </label>
+                                                        <input type="text" id="devWorkerCnt" class="inpDefault devAnimPh" name="Worker_Cnt" maxlength="6">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 ok 추가, 필수 정보 입력하지 않았을 경우 error 추가 -->
+                                            </div>
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label class="ph" for="devFax">
+                                                            팩스번호
+                                                        </label>
+                                                        <input type="text" id="devFax" class="inpDefault devAnimPh" name="Fax" maxlength="15">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 ok 추가 -->
+                                            </div>
+                                        </div>
+
+                                        <div class="tbRow">
+                                            <div id="devAddrArea" class="elWrap devElWrap ok" style="display: block;">
+                                                <div class="schSetArea addressArea">
+                                                    <div class="schSetBx">
+                                                        <strong class="ph">
+                                                            회사주소
+                                                            <span class="point" id="devAddrRequire">*</span>
+                                                        </strong>
+                                                        <div class="bxItemList">
+                                                            <span class="itemWrap">
+                                                                <span class="item devTxResult" id="devAddr">주소</span>
+                                                            </span>
+                                                        </div>
+                                                        <button type="button" class="btnSetFn" id="devSearchAddr">주소검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- javascript: 국내 기업 선택 시, display: block; -->
+                                            <!-- javascript: 회사주소 선택중 클래스 on, 회사주소 선택 완료시 클래스 ok, 입력하지 않고 저장 버튼 누르면 error -->
+
+                                            <div id="devForeignAddrArea" class="elWrap devElWrap" style="display: none;">
+                                                <div class="schInpType">
+                                                    <label class="ph" for="devAddrForeign">회사주소</label>
+                                                    <input type="text" id="devAddrForeign" class="inpDefault devAnimPh" name="Addr_Foreign" maxlength="150">
+                                                    <span class="byte">
+                                                        <em id="devAddrForeignTextCnt">0</em>/70
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- javascript: 외국 기업 선택 시, display: block -->
+                                            <!-- javascript: 회사주소 선택중 클래스 on, 회사주소 선택 완료시 클래스 ok -->
+                                        </div>
+
+                                        <div class="tbRow">
+                                            <div class="elWrap devElWrap">
+                                                <div class="schInpType">
+                                                    <label class="ph" for="devMainItem">
+                                                        주요사업내용
+                                                        <span class="point">*</span>
+                                                    </label>
+                                                    <input type="text" id="devMainItem" class="inpDefault devAnimPh" name="Main_Item" maxlength="50">
+                                                    <span class="byte">
+                                                        <em id="devMainItemTextCnt">0</em>/50
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <!-- javascript: input 선택 시 on 추가, 입력 완료 시 .ok 추가, 필수 정보를 입력하지 않았을 경우 error 추가 -->
+                                        </div>
+
+                                        <div class="tbRow">
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label class="ph" for="txtHomepage">홈페이지</label>
+                                                        <input type="text" id="txtHomepage" class="inpDefault devAnimPh" name="Homepage">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 .ok 추가 -->
+                                            </div>
+
+                                            <div class="tbCell tbCapital">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label for="lb_basic_7" class="ph">자본금</label>
+                                                        <span class="inpTxItem">
+                                                            <input type="text" id="devCapital_A" class="inpDefault devAnimPh devCapitalText" name="Capital_A" title="억단위 입력" maxlength="8">
+                                                            <span class="tx" id="devCapitalUnitA"></span>
+                                                        </span>
+                                                        <span class="inpTxItem">
+                                                            <input type="text" id="devCapital_B" class="inpDefault devAnimPh devCapitalText" name="Capital_B" title="천단위 입력" maxlength="4">
+                                                            <span class="tx" id="devCapitalUnitB"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 .ok 추가 -->
+                                                <!-- javascript: on일 때, devCapitalUnitA, devCapitalUnitB에 각각 억, 만원 넣기 -->
+                                            </div>
+
+                                            <div class="tbCell">
+                                                <div class="elWrap devElWrap">
+                                                    <div class="schInpType">
+                                                        <label class="ph" for="txtSale">매출액 예) 3억 5천만</label>
+                                                        <input type="text" id="txtSale" class="inpDefault devAnimPh" name="Sale" maxlength="10">
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: input 선택 시 on 추가, 입력 완료 시 .ok 추가 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="artCompany artCoHistory">
+                                    <h3 class="info_hd_3">
+                                        <label for="lb_History">연혁 및 실적</label>
+                                    </h3>
+                                    <div class="mtcTxaType">
+                                        <span class="ph devTxAreaExam" style="display: block;">연혁 및 실적은 기업의 실적 위주로 표현하면 좋습니다. (ex. 2017.03. 올해의 브랜드 대상 수상)</span>
+                                        <!-- javascript: textarea에 value가 있다면 display: none; -->
+                                        <textarea rows="3" cols="80" name="Profile1" id="lb_History" class="txArea devTxArea"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="artCompany artCoOverview">
+                                    <h3 class="info_hd_3">
+                                        <label for="lb_overview">기업개요 및 비전</label>
+                                    </h3>
+                                    <div class="mtcTxaType">
+                                        <span class="ph devTxAreaExam" style="display:block">
+                                            기업개요와 비젼은 기업의 특징을 요약해서 표현하면 좋습니다.
+                                            <br>
+                                            (ex. 잡코리아는 1996년에 취업 메타 검색엔진으로 출발하여 성장한 리크루팅마켓플레이스입니다.)
+                                        </span>
+                                        <!-- javascript: textarea에 value가 있다면 display: none; -->
+                                        <textarea rows="3" cols="80" name="Profile" id="lb_overview" class="txArea devTxArea"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- 복리후생 -->
+
+                                <!-- 사진 업로드 -->
+                                <div class="artCompany artCoPhotoVideo" id="photoRegistration">
+                                    <div class="thumbList">
+                                        <h3 class="info_hd_3">
+                                            <span class="fl_l">
+                                                사진 업로드
+                                                <em>(사진 최대 15개까지 업로드 할 수 있습니다.)</em>
+                                            </span>
+                                        </h3>
+                                        <div class="upload-button-area">
+                                            <button type="button" class="button-photo-upload devMngPhoto">
+                                                <span class="mtcBtnB">사진 업로드</span>
+                                            </button>
+                                            <!-- javascript: 사진 업로드 모달 -->
+                                        </div>
+                                        <p class="upload-text-guide">
+                                            사진을 끌어다 순서를 변경하거나, 대표 사진으로 옮겨 놓을 수 있습니다.
+                                        </p>
+                                        <!-- javascirpt: 사진 업로드 시 동적으로 생성됨 -->
+                                        <ul id="devPhotoVideoList" class="sortable" style="position: static;">
+                                            <li class="thumbnail">
+                                                <div class="thumb ok">
+                                                    <img src="https://file2.jobkorea.co.kr/Company/Visual_Co/Image_Thumb_View_CoRead.asp?FN=2026\1\JK_CO_k0nFme926012215002321_150024.jpg&v=20260122150035&W=234&H=174">
+                                                    <span class="btnFunc">
+                                                        <button type="button" class="mtcBtn mtcBtnDel_1 devDeletePhoto"></button>
+                                                    </span>
+                                                </div>
+                                                <div class="text-box">
+                                                    <fieldset>
+                                                        <textarea name="photoVideoText" maxlength="25" title="사진/동영상 설명 입력" placeholder="클릭하여 설명을 입력하세요."></textarea>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- javascript: textarea focus 시 focus 추가 -->
+                                                <!-- javascript: textarea에 value가 있다면 has-value 추가 -->
+                                            </li>
+                                            <li class="thumbnail">
+                                                <div class="thumb ok">
+                                                    <img src="https://file2.jobkorea.co.kr/Company/Visual_Co/Image_Thumb_View_CoRead.asp?FN=2026\1\JK_CO_k0nFme926012215002321_150024.jpg&v=20260122150035&W=234&H=174">
+                                                    <span class="btnFunc">
+                                                        <button type="button" class="mtcBtn mtcBtnDel_1 devDeletePhoto"></button>
+                                                        <!-- javascript: 버튼 클릭 시 alert으로 한 번 더 확인하고, 사진 지워짐 -->
+                                                    </span>
+                                                </div>
+                                                <div class="text-box">
+                                                    <fieldset>
+                                                        <textarea name="photoVideoText" maxlength="25" title="사진/동영상 설명 입력" placeholder="클릭하여 설명을 입력하세요."></textarea>
+                                                    </fieldset>
+                                                </div>
+                                                <!-- javascript: textarea focus 시 focus 추가 -->
+                                                <!-- javascript: textarea에 value가 있다면 has-value 추가 -->
+                                            </li>
+                                            <!-- javascript: 사진을 업로드 시 동적으로 li태그 생성 -->
+                                        </ul>
+                                    </div>
+                                    <!-- 사진 레이어 -->
+                                    <div class="lyFileMng">
+                                        <div class="fileMngWrap" id="devMngPhotoWrap">
+                                            <form id="frmPhoto" action="" method="post">
+                                                <div class="popRecWrap popPhotoVideo photo">
+                                                    <div class="popHd">
+                                                        <h1>사진</h1>
+                                                    </div>
+                                                    <div class="popCont">
+                                                        <div class="fileContWrap">
+                                                            <div class="mtcTplTab">
+                                                                <ul class="tabItems">
+                                                                    <li class="devUploadPhotoTab on">
+                                                                        <a class="devPhotoTab" href="#">사진 파일 업로드</a>
+                                                                        <!-- 사진 파일 업로드 -->
+                                                                        <div class="fileUploadWrap">
+                                                                            <div class="uploadForm">
+                                                                                <div class="infoFileBx clear">
+                                                                                    <span class="ph" id="devFileName">파일형식 : jpg, jpeg, gif / 파일용량 : 최대 3MB</span>
+                                                                                    <span class="fileBx"></span>
+                                                                                    <label for="devSelectPhotoDelegator">
+                                                                                        <button type="button" class="btnMtcTpl" id="devSelectPhotoDelegator"><span>찾아보기</span></button>
+                                                                                    </label>
+                                                                                    <input type="file" id="devSelectPhoto" name="Attach_Data_File" accept=".jpg, .jpeg, .gif" style="display: none;">
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="descWrap">
+                                                                                <h2>사진설명</h2>
+                                                                                <div class="txaBx">
+                                                                                    <textarea name="devPhotoDesc" id="devPhotoDesc_upload" class="txArea" title="내용을 입력하세요." maxlength="25" placeholder="예) 근무빌딩, 사무실, 복리시설, 직원사진, 동호회 활동 등"></textarea>
+                                                                                    <span class="byte">
+                                                                                        <em id="devPhotoDescCnt_upload">0</em>자/25자
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <ul class="ntcList">
+                                                                                <li>저작권, 초상권, 상표권 등에 위배되는 파일/링크는 등록할 수 없고, 발생하는 결과에 대한 모든 책임은 등록한 본인에게 있습니다.</li>
+                                                                                <li><em>개인정보보호를 위해 개인정보가 포함되거나 적합하지 않은 파일/링크는 사전 동의 없이 삭제될 수 있습니다.</em></li>
+                                                                            </ul>
+                                                                        </div>
+
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="popFunc">
+                                                        <button type="button" class="mtcBtnBd devClosePhotoLive">
+                                                            <span>취소</span>
+                                                        </button>
+                                                        <button type="submit" class="mtcBtnBg">
+                                                            <span>확인</span>
+                                                        </button>
+                                                        <!-- javascript: 버튼 클릭 이벤트 -->
+                                                    </p>
+                                                    <button type="button" class="mtcBtn mtcBtnPopClose devClosePhotoLive"></button>
+                                                    <!-- javascript: 닫기 버튼 클릭 시 fileMngWrap에 on 제거 -->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- javascript: 사진 업로드 버튼 클릭 시 on 추가 -->
+                                    </div>
+                                </div>
+                                <div class="artCoNotice">
+                                    <ul>
+                                        <li>수정 불가능한 항목 및 기업정보 뷰 페이지를 수정하시려면 사업자등록증 사본을 팩스로 보내주신 후 잡코리아 고객센터로 연락 주시면 감사하겠습니다.</li>
+                                        <li>
+                                            <strong>고객센터</strong>
+                                             : 
+                                            <em>Email.</em>
+                                            <a href="">helpdesk@jobkorea.co.kr</a>
+                                             , 
+                                            <em>TEL.</em>
+                                             1588-9350 , 
+                                            <em>FAX.</em>
+                                            02-565-9351
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="artCoBtn">
+                                    <button type="submit" id="devBtnSubmit" class="infoBtnBg infoBtnApply">
+                                        <span>저장하기</span>
+                                    </button>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
