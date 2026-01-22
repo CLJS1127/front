@@ -1,4 +1,6 @@
 // 변수 선언
+
+// 서비스 Q&A 모달
 // 다음/이전 버튼
 const serviceSwiperWrapper = document.querySelector(
     ".service-modal .swiper-wrapper",
@@ -21,6 +23,7 @@ const serviceCloseButton = document.querySelector(
 
 // 서비스 선택
 const serviceButtonList = document.querySelectorAll(".service-list li button");
+//
 
 // 공지사항
 const noticeBanner = document.querySelector(".notice-box .swiper-wrapper");
@@ -28,14 +31,39 @@ let noticeCount = 0;
 
 noticeBanner.style.height = "260px";
 
+// 홍보 세션
+// 다음/이전 버튼
+const recruitNextButton = document.querySelector(
+    ".recruit-section .swiper-button-next",
+);
+const recruitPrevButton = document.querySelector(
+    ".recruit-section .swiper-button-prev",
+);
+const recruitSwiperWrapper = document.querySelector(
+    ".recruit-section .swiper-wrapper",
+);
+let recruitCount = 0;
+
+recruitSwiperWrapper.style.width = "1787.5px";
+recruitSwiperWrapper.style.transition = "transform 0.3s";
+
+// 진행 중인 프로그램
+const programDatas = document.querySelectorAll(
+    ".recruit-section .data-box ul li",
+);
+
+// 사이드바 고정
+const rightBanner = document.querySelector(".right-banner");
+
 // 이벤트
+// 서비스 Q&A 모달
 // 이전/다음 버튼
 [serviceNextButton, servicePrevButton].forEach((button) => {
     button.addEventListener("click", (e) => {
         servicePrevButton.classList.remove("swiper-button-disabled");
         serviceNextButton.classList.remove("swiper-button-disabled");
 
-        if (button.classList.contains("swiper-button-next")) {
+        if (button === serviceNextButton) {
             serviceCount++;
             serviceSwiperWrapper.style.transform = `translate(-${730 * serviceCount}px)`;
 
@@ -59,10 +87,9 @@ serviceCloseButton.addEventListener("click", (e) => {
 });
 
 // 서비스 선택
-serviceButtonList.forEach((button) => {
+serviceButtonList.forEach((button, i) => {
     button.addEventListener("click", (e) => {
-        const number = Number(button.firstElementChild.textContent);
-        serviceCount = number - 1;
+        serviceCount = i;
 
         servicePrevButton.classList.remove("swiper-button-disabled");
         serviceNextButton.classList.remove("swiper-button-disabled");
@@ -78,6 +105,7 @@ serviceButtonList.forEach((button) => {
         serviceModal.classList.add("active");
     });
 });
+//
 
 // 공지사항
 setInterval(() => {
@@ -93,3 +121,53 @@ setInterval(() => {
         noticeCount = 0;
     }
 }, 3500);
+
+// 홍보 세션
+// 다음/이전 버튼
+[recruitPrevButton, recruitNextButton].forEach((button) => {
+    button.addEventListener("click", (e) => {
+        recruitNextButton.classList.remove("swiper-button-disabled");
+        recruitPrevButton.classList.remove("swiper-button-disabled");
+
+        if (button === recruitNextButton) {
+            recruitCount++;
+
+            recruitSwiperWrapper.style.transform = `translate(-${357.5 * recruitCount - (recruitCount === 5 && 214.5)}px)`;
+
+            if (recruitCount === 5) {
+                recruitNextButton.classList.add("swiper-button-disabled");
+            }
+        } else {
+            recruitCount--;
+            recruitSwiperWrapper.style.transform = `translate(-${357.5 * recruitCount}px)`;
+
+            if (recruitCount === 0) {
+                recruitPrevButton.classList.add("swiper-button-disabled");
+            }
+        }
+    });
+});
+
+// 진행 중인 프로그램
+programDatas.forEach((data, i) => {
+    if (i === 0 || i === 1) {
+        data.style.marginTop = "7.5px";
+    }
+
+    data.style.transition = "transform 0.3s";
+
+    data.addEventListener("mouseenter", (e) => {
+        data.style.transform = "translateY(-8px)";
+    });
+
+    data.addEventListener("mouseleave", (e) => {
+        data.style.transform = "translateY(0px)";
+    });
+});
+
+// 사이드바 고정
+window.addEventListener("scroll", (e) => {
+    window.scrollY > 278
+        ? rightBanner.classList.add("fixed")
+        : rightBanner.classList.remove("fixed");
+});
