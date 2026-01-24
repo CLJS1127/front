@@ -84,8 +84,15 @@
                                                     <dd>비상장</dd>
                                                 </dl>
                                             </div>
-                                            <div class="tbCell tbLogo on">
-                                                <button type="button" class="infoBtnB infoBtnUp" id="devLogoUp"><span>로고업로드</span></button>
+
+                                            <!-- javascript: 로고 업로드 전 -->
+                                            <div class="tbCell tbLogo">
+                                                <!-- 파일 업로드 전 -->
+                                                <!-- <button type="button" class="infoBtnB infoBtnUp" id="devLogoUp"><span>로고업로드</span></button> -->
+                                                <!-- javascript: 파일 업로드 후 버튼 삭제하고 새로운 버튼 추가(innerHTML) -->
+                                                <p class="logo"></p>
+                                                <p class="btn"></p>
+
                                                 <div class="logoUploadWrap">
                                                     <div id="frmLogo">
                                                         <div class="popRecWrap popLogoUpload">
@@ -560,6 +567,7 @@
                                                             </span>
                                                         </div>
                                                         <button type="button" class="btnSetFn" id="devSearchAddr">주소검색</button>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -577,7 +585,32 @@
                                             </div>
                                             <!-- javascript: 외국 기업 선택 시, display: block -->
                                             <!-- javascript: 회사주소 선택중 클래스 on, 회사주소 선택 완료시 클래스 ok -->
+
+                                            <div class="lyAddrMng">
+                                                <div class="addrMngWrap on" id="devAddrMngWrap">
+                                                    <div id="frmAddr">
+                                                        <div class="popRecWrap popAddr addr">
+                                                            <div class="popHd">
+                                                                <h1>주소 선택</h1>
+                                                            </div>
+                                                            <div class="popCont">
+                                                                <input type="text" id="sample6_postcode" placeholder="우편번호">
+                                                                <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                                                                <input type="text" id="sample6_address" placeholder="주소"><br>
+                                                                <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                                                                <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                                                            </div>
+                                                            <button type="button" class="mtcBtn mtcBtnPopClose" id="devCloseAddr"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- javascript: 주소검색 선택 시 on 추가 -->
+                                            </div>
+
+
+
                                         </div>
+
 
                                         <div class="tbRow">
                                             <div class="elWrap devElWrap">
@@ -682,7 +715,7 @@
                                         <!-- javascript: 복리후생이 선택되면 ul에 li태그 동적으로 생성 -->
                                         <button type="button" class="btnTotal btnSetFn" id="devWlfrInfo">전체보기</button>
                                         <!-- javascript: 버튼 눌렀을 때 isCheckButton 추가 -->
-                                        <div class="giWelfareModal regModalWrap" style="display: block; opacity: 1;">
+                                        <div class="giWelfareModal regModalWrap" style="display: none; opacity: 0;">
                                             <div class="regModal reset" style="margin-top: -307px; outline: none;">
                                                 <div class="madalTopArea">
                                                     <h5 class="titModal">복리후생 선택 </h5>
@@ -1037,7 +1070,7 @@
                                     <!-- 사진 레이어 -->
                                     <div class="lyFileMng">
                                         <div class="fileMngWrap" id="devMngPhotoWrap">
-                                            <div id="frmPhoto" action="" method="post">
+                                            <div id="frmPhoto">
                                                 <div class="popRecWrap popPhotoVideo photo">
                                                     <div class="popHd">
                                                         <h1>사진</h1>
@@ -1125,4 +1158,5 @@
         </div>
     </div>
 </body>
+<script src="/static/js/corporate/profile/event.js"></script>
 </html>
