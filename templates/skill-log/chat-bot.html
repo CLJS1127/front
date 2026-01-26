@@ -3,10 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>chat-bot</title>
+    <link rel="stylesheet" href="../../static/css/skill-log/chat-bot.css">
 </head>
 <body>
-    
+    <button
+            class="chatbot-toggle"
+            id="chatbotToggle"
+            aria-label="챗봇 열기"
+        >
+            <svg
+                class="icon-chat"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M21 12C21 16.9706 16.9706 21 12 21C10.2289 21 8.57736 20.4884 7.18497 19.6038L3 21L4.39624 16.815C3.51163 15.4226 3 13.7711 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+            <svg
+                class="icon-close"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M18 6L6 18M6 6L18 18"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </button>
+
+        <!-- 챗봇 컨테이너 -->
+        <div class="chatbot-container" id="chatbotContainer">
+            <div class="chatbot-header">
+                <div class="chatbot-header-avatar">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"
+                            fill="white"
+                        />
+                    </svg>
+                </div>
+                <div class="chatbot-header-info">
+                    <h3 class="chatbot-header-title">TRY-CATCH 도우미</h3>
+                    <span class="chatbot-header-status">온라인</span>
+                </div>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <!-- 초기 봇 메시지 -->
+                <div class="chatbot-message bot">
+                    <div class="chatbot-message-avatar">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"
+                            />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="chatbot-message-content">
+                            안녕하세요! 👋<br />
+                            TRY-CATCH 도우미입니다.<br />
+                            무엇을 도와드릴까요?
+                        </div>
+                        <div class="chatbot-quick-replies">
+                            <button
+                                class="chatbot-quick-reply"
+                                data-message="체험 신청 방법"
+                            >
+                                체험 신청 방법
+                            </button>
+                            <button
+                                class="chatbot-quick-reply"
+                                data-message="자기소개서 작성 팁"
+                            >
+                                자기소개서 팁
+                            </button>
+                            <button
+                                class="chatbot-quick-reply"
+                                data-message="인기 기업 추천"
+                            >
+                                인기 기업 추천
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-input-area">
+                <input
+                    type="text"
+                    class="chatbot-input"
+                    id="chatbotInput"
+                    placeholder="메시지를 입력하세요..."
+                    maxlength="500"
+                />
+                <button class="chatbot-send" id="chatbotSend" aria-label="전송">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+            </div>
+        </div>
 </body>
 <script src="/static/js/skill-log/chat-bot.js"></script>
 </html>
