@@ -114,7 +114,7 @@
                                                                         <em>GIF,JPEG,JPG,PNG</em>
                                                                         파일형식으로, 200KB 용량 이내의 파일만 등록가능합니다.
                                                                     </li>
-                                                                    <li>- 로고 업로드 시 자동으로 최적화 되어 노출됩니다.</li>
+                                                                    <li>- 로고 업로드 시 128 x 50px 사이즈로 등록하시면 최적의 화질로 노출됩니다.</li>
                                                                 </ul>
                                                                 <!-- 파일첨부한 경우 -->
                                                                 <div class="infoFileBx clear">
@@ -619,11 +619,11 @@
                                                                 <h1>주소 검색</h1>
                                                             </div>
                                                             <div class="popCont">
-                                                                <input type="text" id="postcode" placeholder="우편번호 *" maxlength="5">
-                                                                <input type="button" id="searchPostCodeBtn" value="우편번호 찾기">
-                                                                <input type="text" id="address" placeholder="주소 *">
-                                                                <input type="text" id="detailAddress" placeholder="상세주소">
-                                                                <input type="text" id="extraAddress" placeholder="참고항목">
+                                                                <input type="text" class="address" id="postcode" placeholder="우편번호 *" maxlength="5">
+                                                                <input type="button" class="address" id="searchPostCodeBtn" value="우편번호 찾기">
+                                                                <input type="text" class="address" id="address" placeholder="주소 *">
+                                                                <input type="text" class="address" id="extraAddress" placeholder="참고항목">
+                                                                <input type="text" class="address" id="detailAddress" placeholder="상세주소">
                                                             </div>
                                                             <p class="popFunc">
                                                                 <button type="button" class="mtcBtnBd devCloseAddr">
@@ -1177,6 +1177,9 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="mtcTopBx">
+                <a id="btnMtcTop" href="javascript:;" class="mtcBtn btnMtcTop stop"></a>
             </div>
         </div>
     </div>
