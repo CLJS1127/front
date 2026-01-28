@@ -150,6 +150,3 @@ cancelButton.addEventListener("click", (e) => {
 // kakaoChangePswdButton.addEventListener("click", (e) => {
 //     alert("카카오 아이디로 로그인 하신 경우, \n 비밀번호는 카카오에서 변경하실 수 있습니다.");
 // });
-
-const normalChangePswdButton = document.querySelector(".secNav ol li.mn2 a");
-normalChangePswdButton.addEventListener("click", (e) => {});
