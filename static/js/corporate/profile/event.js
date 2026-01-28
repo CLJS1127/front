@@ -1346,11 +1346,3 @@ toTheTop.addEventListener("click", (e) => {
         behavior: "smooth",
     });
 });
-// 수정 필요
-window.addEventListener("scroll", (e) => {
-    if (window.scrollY < 600) {
-        toTheTop.classList.remove("stop");
-    } else {
-        toTheTop.classList.add("stop");
-    }
-});

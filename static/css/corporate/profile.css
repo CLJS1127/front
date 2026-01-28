@@ -2079,7 +2079,7 @@ address, caption, em {
     background-position: -265px -45px;
 }
 
-/* 맨위로 버튼 */
+/* 맨위로 */
 .mtcTopBx {
     position: relative;
     clear: both;
@@ -2092,8 +2092,4 @@ address, caption, em {
     width: 42px;
     height: 42px;
     background-position: -88px -180px;
-}
-.mtcTopBx .mtcBtn.stop {
-    position: absolute;
-    bottom: 0;
 }

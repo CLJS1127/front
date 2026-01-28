@@ -464,6 +464,17 @@ address, caption, em {
     color: #ff4e4e;
     font-weight: normal;
 }
+
+.error.elWrap {
+    border: 1px solid #eb8f8a !important;
+    z-index: auto;
+}
+.artMemberMng .infoTbBx .elWrap.error .ph {
+    font-size: 11px;
+    letter-spacing: 0px;
+    color: #afb0b2;
+}
+
 .artMemberMng .infoTbBx .tbPw .tbBx {
     position: relative;
     display: inline-block;
@@ -532,6 +543,7 @@ address, caption, em {
     margin-left: 10px;
 }
 
+/* 개인정보 수집 이용 동의 */
 .artMemberMng .tbAgree {
     padding: 15px 16px 0;
 }
@@ -647,6 +659,9 @@ address, caption, em {
 .corp-terms .terms-box .depth-1 li:last-child {
     padding-bottom: 0;
 }
+.corp-terms .terms input:checked + label:before {
+    background-position: 0 -253px;
+}
 
 /* 저장하기 */
 .artBtmFunc {
@@ -676,9 +691,164 @@ address, caption, em {
     color: #fff;
 }
 
+/* errorbox */
+.error .errorBx {
+    display: block;
+}
+
 /* 회원탈퇴 */
 .memberMngWrap .infoBtnLeave {
     position: absolute;
     top: -1px;
     right: 0;
+}
+
+/* 회원탈퇴 모달 */
+.common-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20000 !important;
+    width: 100%;
+    height: 100%;
+}
+.common-modal.active {
+    display: block;
+}
+.common-modal * {
+    box-sizing: border-box;
+}
+.common-modal .modal-dimmed {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+}
+.common-modal .modal-contents {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    background: #fff;
+    padding: 40px;
+}
+.common-modal.company-certify-modal .modal-contents {
+    width: 560px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 48px 40px 40px;
+}
+.common-modal.company-certify-modal h2 {
+    font-size: 24px;
+    letter-spacing: -.5px;
+    color: #222;
+    line-height: 32px;
+    font-weight: 700;
+}
+.common-modal.company-certify-modal .head-desc {
+    margin-top: 4px;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #6a6a6a;
+    line-height: 24px;
+}
+.common-modal.company-certify-modal .modal-data {
+    overflow: hidden;
+    margin-top: 24px;
+    text-align: center;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+}
+.common-modal.company-certify-modal .modal-data .data-info {
+    padding: 15px 0;
+    color: #222;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 24px;
+    font-weight: 600;
+}
+.common-modal.company-certify-modal .modal-data .data-desc {
+    padding: 15px 0;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 22px;
+    background: #f8f8f8;
+    border-radius: 0 0 8px 8px;
+}
+
+.common-modal.company-certify-modal .modal-bts {
+    margin: 24px auto 0;
+    width: 243px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.common-modal.company-certify-modal .modal-btn {
+    margin: 0 auto;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0;
+    color: #fff;
+}
+.common-modal.company-certify-modal .modal-btn.blue {
+    background-color: #003cff;
+}
+.common-modal.company-certify-modal .modal-btn.xl {
+    height: 56px;
+    line-height: 56px;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+
+.common-modal.company-certify-modal .leaveAgreeWrap input {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 1px;
+    height: 1px;
+}
+.common-modal.company-certify-modal .leaveAgreeWrap label{
+    display: block;
+    padding-left: 27px;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #000;
+    line-height: 1;
+    width: 110%;
+    text-align: left;
+}
+.common-modal.company-certify-modal .leaveAgreeWrap label:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 147px;
+    top: 333px;
+    width: 20px;
+    height: 20px;
+    background: #fff url("https://i.jobkorea.kr/content/images/join/sprite-icon.png") no-repeat 0 -283px;
+}
+.common-modal.company-certify-modal .leaveAgreeWrap input:checked + label:before {
+    background-position: 0 -253px;
+}
+.common-modal .close-button {
+    position: absolute;
+    z-index: 10;
+    right: 26px;
+    top: 21px;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: url("/static/images/corporate/icon_close.png") no-repeat 50%;
 }
