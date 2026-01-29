@@ -29,7 +29,7 @@ chargeButton.addEventListener("click", (e) => {
                                             type="text"
                                             class="charge_input__HK4uG"
                                             id="charge-coin"
-                                            value="1,000"
+                                            value="10"
                                         />
                                         <button
                                             class="charge_delete_button__3xtE1"
@@ -41,19 +41,19 @@ chargeButton.addEventListener("click", (e) => {
                                 </label>
                                 <div class="charge_area__1Ks2V">
                                     <button type="button" class="charge_button__3OgjR">
-                                        +1천
+                                        +10
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
-                                        +5천
+                                        +50
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
-                                        +1만
+                                        +100
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
-                                        +10만
+                                        +500
                                     </button>
                                     <button type="button" class="charge_button__3OgjR">
-                                        +100만
+                                        +1000
                                     </button>
                                 </div>
                             </div>
