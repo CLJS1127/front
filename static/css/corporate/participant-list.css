@@ -124,12 +124,12 @@ a, img {
 
 /* 참여자 관리 */
 
-.applicant-list-section {
+.participant-list-section {
     position: relative;
     width: 1020px;
     margin: 0 0 0 10px;
 }
-.applicant-list-section .inner {
+.participant-list-section .inner {
     position: relative;
     width: 1260px;
     margin: 0 auto;
@@ -141,48 +141,48 @@ a, img {
     border-radius: 15px;
     background: #fff;
 }
-.applicant-list-section .border-round-section {
+.participant-list-section .border-round-section {
     padding: 30px;
 }
-.applicant-list-section .status-box {
+.participant-list-section .status-box {
     border-bottom: 1px solid #ebebeb;
 }
-.applicant-list-section .status-box:after {
+.participant-list-section .status-box:after {
     content: "";
     display: block;
     clear: both;
 }
-.applicant-list-section .topArea {
+.participant-list-section .topArea {
     display: flex;
     justify-content: space-between;
     margin: 0 0 23px;
 }
 
-.applicant-list-section .status-box .status-list {
+.participant-list-section .status-box .status-list {
     float: left;
 }
 
-.applicant-list-section .status-box .status-list li {
+.participant-list-section .status-box .status-list li {
     float: left;
     padding: 0 18px;
 }
-.applicant-list-section .status-box .status-list li:first-child {
+.participant-list-section .status-box .status-list li:first-child {
     padding-left: 12px;
 }
 
-.applicant-list-section .status-box .status-list li a {
+.participant-list-section .status-box .status-list li a {
     position: relative;
     padding-bottom: 9px;
     line-height: 24px;
     font-size: 16px;
     letter-spacing: 0;
 }
-.applicant-list-section .status-box .status-list li a.active {
+.participant-list-section .status-box .status-list li a.active {
     color: #39f;
     font-weight: 700;
 }
 
-.applicant-list-section .status-box .status-list li a.active:before {
+.participant-list-section .status-box .status-list li a.active:before {
     position: absolute;
     left: -12px;
     bottom: -1px;
@@ -193,40 +193,40 @@ a, img {
     background: #39f;
 }
 
-.applicant-list-section .status-box .status-list li a.active em {
+.participant-list-section .status-box .status-list li a.active em {
     font-weight: 700;
 }
-.applicant-list-section .status-box .status-list:after {
+.participant-list-section .status-box .status-list:after {
     content: "";
     display: block;
     clear: both;
 }
 
-.applicant-list-section .sort-select-box {
+.participant-list-section .sort-select-box {
     position: relative;
     z-index: 4;
     margin-top: 20px;
 }
-.applicant-list-section .sort-select-box:after {
+.participant-list-section .sort-select-box:after {
     content: "";
     display: block;
     clear: both;
 }
 
-.applicant-list-section .sort-select-box .drop-down-box {
+.participant-list-section .sort-select-box .drop-down-box {
     float: left;
     margin-top: 6px;
 }
-.applicant-list-section .sort-select-box .drop-down-box .button-box {
+.participant-list-section .sort-select-box .drop-down-box .button-box {
     position: relative;
     float: left;
 }
-.applicant-list-section .sort-select-box .drop-down-box:after {
+.participant-list-section .sort-select-box .drop-down-box:after {
     content: "";
     display: block;
     clear: both;
 }
-.applicant-list-section .sort-select-box .drop-down-box .button-box .sort-button {
+.participant-list-section .sort-select-box .drop-down-box .button-box .sort-button {
     display: block;
     padding-right: 20px;
     line-height: 20px;
@@ -246,7 +246,7 @@ a, img {
 .select-modal_common.active {
     display: block;
 }
-.applicant-list-section .sort-select-box .drop-down-box .button-box .sort-select-modal {
+.participant-list-section .sort-select-box .drop-down-box .button-box .sort-select-modal {
     left: 0;
     width: calc(100% + 13px);
     margin-top: 8px;
@@ -271,7 +271,7 @@ a, img {
     color: #000;
 }
 
-.applicant-list-section .sort-select-box .filter-button {
+.participant-list-section .sort-select-box .filter-button {
     float: right;
     display: block;
     width: 32px;
@@ -287,7 +287,7 @@ a, img {
     border: 1px solid #d7d7d7;
     border-radius: 4px;
 }
-.applicant-list-section .sort-select-box .search-box {
+.participant-list-section .sort-select-box .search-box {
     float: right;
     width: 285px;
     margin-right: 10px;
@@ -474,13 +474,13 @@ input[type=checkbox]:checked+.checkbox-label_common {
     padding-left: 20px;
     background: url("https://i.jobkorea.kr/content/images/corporate/position/icon_reset.png") no-repeat 1px -3px;
 }
-.applicant-list-section .search-keyword-box {
+.participant-list-section .search-keyword-box {
     padding: 10px 12px;
     border: 1px solid #333;
     border-radius: 5px;
     margin-top: 10px;
 }
-.applicant-list-section .search-keyword-box .line-list {
+.participant-list-section .search-keyword-box .line-list {
     float: left;
 }
 .line-list>div, .line-list>li {
@@ -493,20 +493,20 @@ input[type=checkbox]:checked+.checkbox-label_common {
 .line-list>div:first-child, .line-list>li:first-child {
     padding-left: 0 !important;
 }
-.applicant-list-section .search-keyword-box .line-list li {
+.participant-list-section .search-keyword-box .line-list li {
     line-height: 20px;
 }
 
-.applicant-list-section .search-keyword-box .line-list li .title {
+.participant-list-section .search-keyword-box .line-list li .title {
     color: #666;
     font-weight: 700;
 }
-.applicant-list-section .search-keyword-box .line-list li:after {
+.participant-list-section .search-keyword-box .line-list li:after {
     content: "";
     display: block;
     clear: both;
 }
-.applicant-list-section .search-keyword-box .line-list li {
+.participant-list-section .search-keyword-box .line-list li {
     line-height: 20px;
 }
 .line-list>div:nth-child(n+2):before, .line-list>li:nth-child(n+2):before {
@@ -520,13 +520,13 @@ input[type=checkbox]:checked+.checkbox-label_common {
     height: 12px;
     background: #e6e6e6;
 }
-.applicant-list-section .search-keyword-box .line-list li .keyword {
+.participant-list-section .search-keyword-box .line-list li .keyword {
     position: relative;
     float: left;
     padding-right: 20px;
     line-height: 20px;
 }
-.applicant-list-section .search-keyword-box .line-list li .keyword .button-delete {
+.participant-list-section .search-keyword-box .line-list li .keyword .button-delete {
     position: absolute;
     right: 0;
     top: 4px;
@@ -539,53 +539,53 @@ input[type=checkbox]:checked+.checkbox-label_common {
     display: block;
     clear: both;
 }
-.applicant-list-section .search-keyword-box .reset-button {
+.participant-list-section .search-keyword-box .reset-button {
     float: right;
     padding-left: 20px;
     line-height: 20px;
     background: url("https://i.jobkorea.kr/content/images/corporate/position/icon_reset.png") no-repeat 0;
 }
 
-.applicant-list-section .applicant-list-table {
+.participant-list-section .participant-list-table {
     table-layout: fixed;
     margin-top: 20px;
 }
 
 
-.applicant-list-section .applicant-list-table th {
+.participant-list-section .participant-list-table th {
     height: 40px;
     background: #f5f7fa;
     font-weight: 400;
 }
-.applicant-list-section .applicant-list-table th:first-child {
+.participant-list-section .participant-list-table th:first-child {
     width: 38px;
     padding-left: 12px;
 }
 
-.applicant-list-section .applicant-list-table th .order-select-box {
+.participant-list-section .participant-list-table th .order-select-box {
     position: relative;
     display: table;
     width: auto;
     margin: 0 auto;
 }
 
-.applicant-list-section .applicant-list-table th .order-select-box .order-button {
+.participant-list-section .participant-list-table th .order-select-box .order-button {
     display: block;
     line-height: 40px;
     margin: 0 auto;
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-button.active:after {
+.participant-list-section .participant-list-table th .order-select-box .order-button.active:after {
     display: inline-block;
     vertical-align: middle;
     margin-top: -1px;
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-button.down:after {
+.participant-list-section .participant-list-table th .order-select-box .order-button.down:after {
     content: "↓";
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-button.up:after {
+.participant-list-section .participant-list-table th .order-select-box .order-button.up:after {
     content: "↑";
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-button.active {
+.participant-list-section .participant-list-table th .order-select-box .order-button.active {
     font-weight: 700;
 }
 
@@ -602,78 +602,78 @@ input[type=checkbox]:checked+.checkbox-label_common {
 .select-modal_common.active {
     display: block;
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-select-modal {
+.participant-list-section .participant-list-table th .order-select-box .order-select-modal {
     margin-top: -2px;
 }
-.applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.career, .applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.education, .applicant-list-section .applicant-list-table th .order-select-box .order-select-modal.name-age {
+.participant-list-section .participant-list-table th .order-select-box .order-select-modal.career, .participant-list-section .participant-list-table th .order-select-box .order-select-modal.education, .participant-list-section .participant-list-table th .order-select-box .order-select-modal.name-age {
     width: 81px;
 }
 
 .select-modal_common ul li {
     padding: 0 10px;
 }
-.applicant-list-section .applicant-list-table th .order-select-modal ul li button.active {
+.participant-list-section .participant-list-table th .order-select-modal ul li button.active {
     color: #39f;
 }
 
 
-.applicant-list-section .applicant-list-table th:nth-child(1) {
-    width: 125px;
+.participant-list-section .participant-list-table th:nth-child(1) {
+    width: 100px;
     padding-left: 8px;
 }
-.applicant-list-section .applicant-list-table th:nth-child(2) {
-    width: 165px;
+.participant-list-section .participant-list-table th:nth-child(2) {
+    width: 100px;
     padding-left: 8px;
     text-align: left;
 }
-.applicant-list-section .applicant-list-table th:nth-child(3) {
-    width: 165px;
+.participant-list-section .participant-list-table th:nth-child(3) {
+    width: 205px;
 }
-.applicant-list-section .applicant-list-table th:nth-child(4) {
-    width: 165px;
+.participant-list-section .participant-list-table th:nth-child(4) {
+    width: 180px;
 }
-.applicant-list-section .applicant-list-table th:nth-child(5) {
-    width: 165px;
+.participant-list-section .participant-list-table th:nth-child(5) {
+    width: 200px;
 }
-.applicant-list-section .applicant-list-table th:nth-child(6) {
+.participant-list-section .participant-list-table th:nth-child(6) {
     width: 17px;
 }
-/* .applicant-list-section .applicant-list-table th:nth-child(7) {
+/* .participant-list-section .participant-list-table th:nth-child(7) {
     width: 17px;
 } */
 
-.applicant-list-section .applicant-list-table td {
+.participant-list-section .participant-list-table tr.data-none-case td {
     position: relative;
     padding: 33px 0 64px;
     vertical-align: top;
     border-bottom: 1px solid #ebebeb;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td {
+.participant-list-section .participant-list-table tr.data-none-case td {
     padding: 125px 0;
     text-align: center;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td .icon-frown {
+.participant-list-section .participant-list-table tr.data-none-case td .icon-frown {
     width: 76px;
     height: 70px;
     background: url("https://i.jobkorea.kr/content/images/corporate/position/icon_frown.png") no-repeat 50%;
     margin: 0 auto;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td .large-text {
+.participant-list-section .participant-list-table tr.data-none-case td .large-text {
     line-height: 23px;
     font-size: 16px;
     letter-spacing: 0;
     font-weight: 700;
     margin-top: 20px;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td .text {
+.participant-list-section .participant-list-table tr.data-none-case td .text {
     line-height: 18px;
     color: grey;
     margin-top: 6px;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td .btn-box {
+.participant-list-section .participant-list-table tr.data-none-case td .btn-box {
     margin: 20px 0 0;
 }
-.applicant-list-section .applicant-list-table tr.data-none-case td .btn-box button {
+.participant-list-section .participant-list-table tr.data-none-case td .btn-box button {
     padding: 16px 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -684,26 +684,29 @@ input[type=checkbox]:checked+.checkbox-label_common {
     color: #333;
 }
 
-
-.mtcSchListTb tbody td {
+.participant-list-table tbody td {
     padding: 20px 5px;
     text-align: center;
     font-size: 14px;
     letter-spacing: 0px;
     color: #666;
     border-bottom: 1px solid #edeef0;
+    text-align: center;
 }
-.mtcSchListTb tbody td.alLeft {
-    text-align: left;
-}
-.mtcSchListTb tbody td .tdInner {
+.participant-list-table tbody td .tdInner {
     position: relative;
 }
-.mtcSchListTb .photoItem {
-    margin-left: 8px;
+.participant-list-table .photoItem {
+    margin-left: 60px;
+    padding-left: 30px;
+    
     display: inline-block;
     vertical-align: middle;
 }
+.participant-list-table .nameItem {
+    padding-left: 30px;
+}
+
 .photoItem .itemWrap {
     display: flex;
     justify-content: center;
@@ -723,19 +726,192 @@ input[type=checkbox]:checked+.checkbox-label_common {
     z-index: 1;
 }
 
+
+.photoItem .itemWrap .photoEl .photo, .photoItem .itemWrap .photoEl .imgDefault {
+    width: 70px;
+    height: 78px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -39px;
+}
+.photoItem .itemWrap .photoEl .imgDefault {
+    background-position: -140px -75px;
+    top: 0;
+    margin-top: 0;
+}
 .photoItem .itemWrap .photoEl.not-read .imgDefault {
     background: none !important;
 }
 
 
 
+.photoItem .imgDefault, .photoItem .maskEl, .photoItem .maskEl .mask, .photoItem .maskEl .new {
+    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/common/mtc_sp_list.png") -206px -75px no-repeat;
+}
+.photoItem .maskEl {
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -30px 0 0 -30px;
+    background-position: -210px -75px;
+    z-index: 2;
+}
+.photoItem .itemWrap .photoEl.not-read + .maskEl {
+    background-position: -140px -75px;
+}
 
 
 
-.applicant-list-section .notice-box {
+.participant-list-table .name {
+    display: inline-block;
+    max-width: 100%;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000;
+    font-weight: normal;
+    vertical-align: middle;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.participant-list-table tbody td .name {
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: #000;
+    width: 100%;
+    text-align: left;
+    padding: 0 0 0 15px;
+}
+.participant-list-table .nmAge {
+    display: block;
+    margin-top: 7px;
+    padding: 0 0 0 15px;
+    text-align: left;
+}
+
+
+.participant-list-table .nmAge > span {
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #666;
+    vertical-align: top;
+}
+
+.btnMtcTpl {
+    display: inline-block;
+    height: 36px;
+    padding: 0 15px;
+    line-height: 34px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    letter-spacing: 0px;
+    color: #000;
+    text-align: center;
+    box-sizing: border-box;
+}
+.btnMtcTpl, .btnViewImptnt, .btnMtcLySel, .btnMtcCal {
+        line-height: 35px;
+    }
+.btnMtcTpl {
+    background: #fff;
+}
+.btnMtcTpl:hover {
+    border-color: #777777;
+}
+.nameItem:hover .name {
+    color: #39f;
+}
+.nameItem:hover .nmAge > span {
+    color: #39f;
+}
+
+.button_area {
+    position: relative;
+    margin-top: 40px;
+}
+.tplPagination {
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+}
+.bottom_area .tplPagination {
+    display: flex;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+}
+.tplPagination p, .tplPagination ul, .tplPagination li {
+    display: inline-block;
+    vertical-align: top;
+}
+.bottom_area .tplPagination ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.bottom_area .tplPagination ul li {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+.bottom_area .tplPagination ul li:last-child {
+    margin-right: 0;
+}
+.tplPagination a, .tplPagination .tplBtn, .tplPagination .now {
+    display: inline-block;
+    color: #999;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+.button_area .tplPagination ul li a{
+    display: block;
+    height: 100%;
+    border: none;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0;
+    color: #6a6a6a;
+    line-height: 32px;
+    text-align: center
+}
+.button_area .tplPagination ul li a.now{
+    background: #f4f4f4;
+    font-weight: 500;
+    color: #222;
+    border-radius: 50%;
+}
+
+.participant-list-table button.advancement {
+    width: 90px;
+    background-color: #5288FF;
+    color: #fff;
+    border: 0px;
+}
+.participant-list-table button.advancement.reject {
+    background-color: #FF501B;
+    margin-left: 3px;
+
+}
+.participant-list-table span.reject {
+    color: #FF501B;
+}
+.participant-list-table span.approve {
+    color: #5288FF;
+}
+
+
+.participant-list-section .notice-box {
     padding: 20px;
     background: #fafbfc;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .point-bullet-list li {
     position: relative;
@@ -754,3 +930,4 @@ input[type=checkbox]:checked+.checkbox-label_common {
 .point-bullet-list li:nth-child(n+2) {
     margin-top: 4px;
 }
+
