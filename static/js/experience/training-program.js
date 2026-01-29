@@ -351,12 +351,12 @@ share.addEventListener("click", (e) => {
 
 // 스크롤 탑 (탭 네비게이션: 상세요강/지원자격/복리후생/추천공고)
 /**
- * ✅ 문제 원인(깜빡임)
+ *  문제 원인(깜빡임)
  * - 탭 클릭 시 `scrollTo({behavior:'smooth'})`가 실행되면서 스크롤 이벤트가 연속으로 발생함
  * - 스크롤 이벤트 핸들러가 섹션 위치 기준으로 active 탭을 계속 바꾸기 때문에,
  *   스크롤 중간 구간(지원자격/복리후생 등)을 잠깐 지나갈 때 다른 탭이 "깜빡" 활성화됨
  *
- * ✅ 해결
+ *  해결
  * - 탭 클릭으로 발생한 "프로그램 스크롤" 동안에는 스크롤 이벤트 기반 active 변경을 잠시 막고,
  *   클릭한 탭만 유지
  * - 스크롤이 멈추면(짧은 시간 스크롤 이벤트가 더 이상 안 오면) 다시 스크롤 기반 동작 활성화
@@ -393,7 +393,7 @@ const spans = Array.from(
     ),
 );
 
-// 🔒 요소 누락 시(다른 페이지에서 스크립트 공유 등) 탭 로직만 조용히 스킵
+//  요소 누락 시(다른 페이지에서 스크립트 공유 등) 탭 로직만 조용히 스킵
 const hasAllTabElements =
     buttons.every(Boolean) &&
     [guideLine, applyQualification, welfare, recommended].every(Boolean) &&
@@ -410,7 +410,7 @@ function scheduleAutoScrollRelease() {
     }, 150);
 }
 
-// ✅ 탭 UI(active)만 통일되게 반영 (버튼 dataset/state + aria-selected + span 색/굵기)
+//  탭 UI(active)만 통일되게 반영 (버튼 dataset/state + aria-selected + span 색/굵기)
 function setActiveTab(idx) {
     buttons.forEach((btn, i) => {
         const active = i === idx;
@@ -459,7 +459,7 @@ if (hasAllTabElements) {
     });
 
     // 스크롤 이벤트: "사용자 스크롤"일 때만 탭 자동 변경
-    window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", (e) => {
         if (isAutoScrollingByClick) {
             // 스무스 스크롤 중이면 탭 변경 금지 + 스크롤 끝나는 시점 갱신
             scheduleAutoScrollRelease();
@@ -531,296 +531,6 @@ window.addEventListener("scroll", (e) => {
     }
 });
 
-const supportButton = document.querySelector(
-    ".Button_root__1c0cohd0.Button_variantColor_contained-primary__1c0cohd8.Button_size_52__1c0cohd5._7dgcmg2",
-);
-
-supportButton.addEventListener("click", (e) => {
-    const form = document.createElement("form");
-    form.id = "devForm";
-    form.setAttribute("method", "post");
-    // 서버 위치 적어야함.
-    form.setAttribute("action", "");
-    form.setAttribute("name", "devForm");
-
-    form.innerHTML = `
-        <input type="hidden" name="Oem_No" id="Oem_No" value="">
-    <input type="hidden" name="Gno" id="Gno" value="">
-    <input type="hidden" name="GI_No" value="">
-    <input type="hidden" name="M_ID" id="M_ID" value="">
-    <input type="hidden" name="Pass_Match" value="">
-    <input type="hidden" name="sc" id="sc">
-    <input type="hidden" name="sn" id="sn" value="">
-    <input type="hidden" name="segmentType" id="segmentType" value="">
-    <input type="hidden" name="Pass_Gubun" id="Pass_Gubun" value="">
-    <input type="hidden" name="passType" id="passType" value="">
-    <input type="hidden" name="Portfolio_idx" id="Portfolio_idx">
-    <input type="hidden" name="File_idx" id="File_idx">
-    <input type="hidden" name="FileEng_idx" id="FileEng_idx">
-    <input type="hidden" name="api_no" id="api_no">
-
-    <input type="hidden" name="GG_Apt_Stat" id="GG_Apt_Stat">
-    <input type="hidden" name="Jat_Rsno" id="Jat_Rsno" value="0">
-
-    <input type="hidden" name="PartText" id="PartText">
-    <input type="hidden" name="Answer_Text" id="Answer_Text">
-    <input type="hidden" name="R_No" id="R_No" value="">
-    <input type="hidden" name="Job_Field_Reg_Stat" id="Job_Field_Reg_Stat" value="">
-    <!--첨부파일 정보//-->
-    <input type="hidden" name="Add_File" id="Add_File">
-
-    <input type="hidden" name="IsLimitCompany" id="IsLimitCompany" value="0">
-    <input type="hidden" name="TalenPoolAutoRegStat" value="0">
-    <input type="hidden" name="M_Email" id="M_Email" value="">
-    <input type="hidden" name="M_Hand_Phone" id="M_Hand_Phone" value="">
-    <input type="hidden" name="CoApp_R_Lngg_Code" id="CoApp_R_Lngg_Code" value="0">
-    <input type="hidden" name="isForeign" id="isForeign" value="0">
-    <input type="hidden" name="PreFileIdx" id="PreFileIdx">
-    <input type="hidden" name="LogPath" id="LogPath" value="">
-    <input type="hidden" name="PFL_STAT" id="PFL_STAT" value="">
-    <input type="hidden" name="isProfileOnpass" id="isProfileOnpass" value="0">
-    
-    <input type="hidden" id="Prtfl_Attach_Wish_Stat" value="0">
-    <input type="hidden" id="Itv_Cntnt_Stat" value="0">
-    <input type="hidden" id="GI_Type_Code">
-
-
-    <div class="apply-page">
-        <div class="page-content">
-            <div class="apply-job-info">
-                <h2 class="job-title">
-                    [부산 중구] 조리사(셰프) 정규직/파트타이머 채용
-                </h2>
-                            <div class="job-meta">
-                                <span class="job-badge">지원분야</span>
-                                <p class="job-description">
-                                    조리사
-                                </p>
-                                <input name="PartIDX" type="hidden" value="39481696">
-                            </div>
-            </div>
-            <div class="apply-form">
-                
-                    
-                                <div class="form-section form-section--attachment dev-attachment-section" style="display: block;">
-                    <div class="section-header">
-                        <p class="section-title">첨부파일</p>
-                        <button type="button" class="btn-change dev-btn-change" style="display: inline-flex;">
-                            변경 <span class="badge-count">3</span>
-                        </button>
-                    </div>
-
-
-
-                
-
-                    <div class="selected-option-list dev-selected-option-list" style="display:none;"></div>
-
-                    <div class="attachment-list option-list dev-attachment-list" style="display:none;"><input type="checkbox" id="File_idx0" name="chk_File" value="12500227" class="option-input option-checkbox"><label for="File_idx0" class="option-label"><div class="option-body"><p class="option-title">loading_green.gif</p><p class="option-meta"><span>추천서</span><span>2026.01.29</span></p></div></label><input type="checkbox" id="File_idx1" name="chk_File" value="12500226" class="option-input option-checkbox"><label for="File_idx1" class="option-label"><div class="option-body"><p class="option-title">loading_green.gif</p><p class="option-meta"><span>기타</span><span>2026.01.29</span></p></div></label><input type="checkbox" id="File_idx2" name="chk_File" value="12500224" class="option-input option-checkbox"><label for="File_idx2" class="option-label"><div class="option-body"><p class="option-title">loading_green.gif</p><p class="option-meta"><span>기타</span><span>2026.01.29</span></p></div></label></div>
-
-                    <button type="button" class="btn-submit-change dev-btn-submit-change" style="display:none;">
-                        변경하기
-                    </button>
-
-                    <div class="button-grid">
-                        <button type="button" class="button-item dev-btn-file-attach">
-                            파일첨부
-                        </button>
-                                                                    </div>
-                    <div id="hidButtons" style="display:none"></div>
-                </div>
-
-
-                
-                <div class="form-section form-section--contact dev-contact-info-view" style="">
-                    <div class="section-header">
-                        <p class="section-title">연락처</p>
-                        <button type="button" class="btn-text">
-                            수정
-                        </button>
-                    </div>
-                    <div class="contact-info">
-                        <ul class="contact-list">
-                            <li class="contact-item">
-                                <span class="contact-label">휴대폰</span>
-                                <p class="contact-value">010-9397-3256</p>
-                            </li>
-                            <li class="contact-item">
-                                <span class="contact-label">이메일</span>
-                                <p class="contact-value">dlwnstn0315@gmail.com</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="form-section form-section--contact dev-contact-info-edit" style="display: none;">
-                    <div class="section-header">
-                        <p class="section-title">연락처</p>
-                        <button type="button" class="btn-text done">
-                            완료
-                        </button>
-                    </div>
-                    <div class="contact-input-list">
-                        <div class="input-field">
-                            <div class="input-wrapper">
-                                <input type="tel" id="phone" class="jkPhoneInp filled" placeholder="" value="010-9397-3256">
-                                <label for="phone" class="input-label" style="display: none;">휴대폰</label>
-                                <button type="button" class="input-clear"></button>
-                            </div>
-                            <div class="field-helper">
-                                <div class="error-message" style="display:none;">
-                                    휴대폰 번호를 다시 확인해 주세요.
-                                </div>
-                                <div class="checkbox-field">
-                                    <input type="checkbox" id="chkForeign" name="chkForeign">
-                                    <label for="chkForeign">해외거주</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div class="input-wrapper">
-                                <input type="email" id="email" class="jkAppEmail filled" placeholder="" value="dlwnstn0315@gmail.com">
-                                <label for="email" class="input-label" style="display: none;">이메일</label>
-                                <button type="button" class="input-clear"></button>
-                            </div>
-                            <div class="field-helper">
-                                <div class="error-message" style="display:none;">
-                                    이메일 정보가 정확하지 않습니다.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="form-section form-section--notice">
-                    <div class="notice-box">
-                        <ul class="notice-list">
-                            <li class="notice-item">
-                                개인정보 파일은 사전동의 없이 삭제될 수 있습니다.
-                            </li>
-                            <li class="notice-item">
-                                제출서류는 채용 마감 후 90일까지 지원기업에게 제공됩니다.
-                            </li>
-                            <li class="notice-item">
-                                제출에 동의할 경우에만 [지원하기] 버튼을 클릭해 주세요.
-                            </li>
-                            <li class="notice-item">
-                                동의하지 않을 경우 입사지원이 불가능합니다.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="page-footer">
-            <button type="button" class="footer-btn dev-btn-apply">
-                지원하기
-            </button>
-        </div>
-
-        <!-- 양식 다운로드 layer popup -->
-        <div class="layer-popup form-download-popup dev-form-download-popup">
-            <div class="layer-popup-dim"></div>
-            <div class="layer-popup-container">
-                <div class="header">
-                    <h2 class="title">양식 다운로드</h2>
-                    <button type="button" class="close-btn" aria-label="닫기">×</button>
-                </div>
-                <div class="content" id="lyResumeFormDown">
-
-                <ul class="download-list">
-                    </ul>
-                </div>
-                <div class="layer-popup-footer">
-                    <div class="buttons-wrapper">
-                        <button type="button" class="sheet-btn gray btn-cancel">취소</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 파일첨부 layer popup -->
-        <div class="layer-popup file-attach-sheet dev-file-attach-popup">
-            <div class="layer-popup-dim"></div>
-            <div class="layer-popup-container">
-                <div class="header">
-                    <h2 class="title">파일첨부</h2>
-                    <button type="button" class="close-btn" aria-label="닫기">×</button>
-                </div>
-                <div class="content">
-                    <div class="attach-type-toggle">
-                        <button type="button" class="toggle-btn toggle-btn--file dev-toggle-btn-file active" data-type="file">
-                            <span class="toggle-text">파일추가</span>
-                        </button>
-                        <button type="button" class="toggle-btn toggle-btn--url dev-toggle-btn-url" data-type="url">
-                            <span class="toggle-text">URL</span>
-                        </button>
-                    </div>
-                    <div class="attach-input-wrapper">
-                        <div class="attach-input-file dev-input-file-wrapper" id="input-file-wrapper" style="display: block;">
-                            <input type="file" id="file-input" class="file-input dev-file-input" style="display: none;">
-                            <button type="button" class="file-select-btn dev-file-select-btn" id="file-select-btn">파일을 선택해 주세요.</button>
-                        </div>
-                        <div class="input-field dev-input-url-wrapper" id="input-url-wrapper" style="display: none;">
-                            <div class="input-wrapper">
-                                <input type="text" id="url-input" class="dev-url-input filled" placeholder="" value="https://">
-                                <label for="url-input" class="input-label" style="display: none;">URL</label>
-                                <button type="button" class="input-clear"></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="attach-category">
-                        <div class="category-column">
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="portfolio" class="category-radio">
-                                <span class="category-label">포트폴리오</span>
-                            </label>
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="resume" class="category-radio">
-                                <span class="category-label">이력서</span>
-                            </label>
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="proposal" class="category-radio">
-                                <span class="category-label">기획안</span>
-                            </label>
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="certificate" class="category-radio">
-                                <span class="category-label">자격증</span>
-                            </label>
-                        </div>
-                        <div class="category-column">
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="proof" class="category-radio">
-                                <span class="category-label">증명서</span>
-                            </label>
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="recommendation" class="category-radio">
-                                <span class="category-label">추천서</span>
-                            </label>
-                            <label class="category-option">
-                                <input type="radio" name="attach-category" value="other" class="category-radio">
-                                <span class="category-label">기타</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="layer-popup-footer">
-                    <div class="buttons-wrapper">
-                        <button type="button" class="sheet-btn gray btn-cancel">취소</button>
-                        <button type="button" class="sheet-btn blue btn-confirm" data-custom-handler="true">확인</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="lyOnPassWrap" id="lyJat" style="display: none;"></div>
-        <div class="lyOnPassWrap" id="lyMyFile" style="display: none;"></div>
-        <div class="lyOnPassWrap" id="lyFileSel" style="display: none;"></div>
-        <div class="lyOnPassWrap" id="lyEditInfo" style="display: none;"></div>
-    </div>
-    `;
-    document.appendChild(form);
-});
-
 // ===============================================
 // 즉시지원 모달 기능
 // ===============================================
@@ -859,7 +569,7 @@ function updateCloseBtnPosition() {
 }
 
 // 윈도우 리사이즈 시 X 버튼 위치 업데이트
-window.addEventListener("resize", () => {
+window.addEventListener("resize", (e) => {
     if (applyModalOverlay && applyModalOverlay.classList.contains("active")) {
         updateCloseBtnPosition();
     }
@@ -883,7 +593,7 @@ if (applyButton) {
 
 // X 버튼 클릭 시 모달 닫기
 if (modalCloseBtn) {
-    modalCloseBtn.addEventListener("click", () => {
+    modalCloseBtn.addEventListener("click", (e) => {
         closeApplyModal();
     });
 }
@@ -914,8 +624,22 @@ const contactDoneBtn = document.querySelector(".dev-btn-contact-done");
 const contactViewSection = document.querySelector(".dev-contact-info-view");
 const contactEditSection = document.querySelector(".dev-contact-info-edit");
 
+// 번호-이메일 여부
+const phoneNum = document.getElementById("modal-phone");
+const errorMsg = document.querySelectorAll(".error-message");
+const email = document.getElementById("modal-email");
+
+errorMsg.forEach((Msg) => {
+    phoneNum.addEventListener("blur", (e) => {
+        errorMsg[0].style.display = e.target.value === "" ? "block" : "none";
+    });
+    email.addEventListener("blur", (e) => {
+        errorMsg[1].style.display = e.target.value === "" ? "block" : "none";
+    });
+});
+
 if (contactEditBtn) {
-    contactEditBtn.addEventListener("click", () => {
+    contactEditBtn.addEventListener("click", (e) => {
         if (contactViewSection && contactEditSection) {
             contactViewSection.style.display = "none";
             contactEditSection.style.display = "block";
@@ -923,18 +647,32 @@ if (contactEditBtn) {
     });
 }
 
+// 입력값을 보기 섹션에 반영
+const phoneInput = document.getElementById("modal-phone");
+const emailInput = document.getElementById("modal-email");
+const phoneValue = contactViewSection.querySelector(
+    ".contact-item:first-child .contact-value",
+);
+const emailValue = contactViewSection.querySelector(
+    ".contact-item:last-child .contact-value",
+);
 if (contactDoneBtn) {
-    contactDoneBtn.addEventListener("click", () => {
+    contactDoneBtn.addEventListener("click", (e) => {
         if (contactViewSection && contactEditSection) {
-            // 입력값을 보기 섹션에 반영
-            const phoneInput = document.getElementById("modal-phone");
-            const emailInput = document.getElementById("modal-email");
-            const phoneValue = contactViewSection.querySelector(
-                ".contact-item:first-child .contact-value",
-            );
-            const emailValue = contactViewSection.querySelector(
-                ".contact-item:last-child .contact-value",
-            );
+            errorMsg.forEach((Msg) => {
+                if (!phoneInput.value.trim() && !emailInput.value.trim()) {
+                    errorMsg[0].style.display = "block";
+                    errorMsg[1].style.display = "block";
+                } else if (!emailInput.value.trim()) {
+                    errorMsg[1].style.display = "block";
+                } else if (!phoneInput.value.trim()) {
+                    errorMsg[0].style.display = "block";
+                }
+            });
+
+            if (!phoneInput.value || !emailInput.value) {
+                return;
+            }
 
             if (phoneInput && phoneValue) {
                 phoneValue.textContent = phoneInput.value;
@@ -949,6 +687,22 @@ if (contactDoneBtn) {
     });
 }
 
+const sucessBtn = document.querySelector(".btn-text.done.dev-btn-contact-done");
+
+sucessBtn.addEventListener("click", (e) => {
+    if (!phoneNum.value.trim() && !email.value.trim()) {
+        alert("핸드폰 번호와 이메일을 입력해주세요.");
+        errorMsg[0].style.display = "block";
+        errorMsg[1].style.display = "block";
+    } else if (!email.value.trim()) {
+        alert("이메일을 확인해주세요");
+        errorMsg[1].style.display = "block";
+    } else if (!phoneNum.value.trim()) {
+        alert("핸드폰번호 입력.");
+        errorMsg[0].style.display = "block";
+    }
+});
+
 // 파일첨부 팝업 열기/닫기
 const fileAttachBtn = document.querySelector(
     "#applyModal .dev-btn-file-attach",
@@ -960,7 +714,7 @@ const attachedFilesList = document.getElementById("attachedFilesList");
 let selectedFile = null;
 
 if (fileAttachBtn && fileAttachPopup) {
-    fileAttachBtn.addEventListener("click", () => {
+    fileAttachBtn.addEventListener("click", (e) => {
         fileAttachPopup.classList.add("active");
         // 팝업 열 때 파일 선택 초기화
         const fileInput = document.getElementById("modal-file-input");
@@ -975,7 +729,7 @@ if (fileAttachBtn && fileAttachPopup) {
         ".close-btn, .btn-cancel",
     );
     closeButtons.forEach((btn) => {
-        btn.addEventListener("click", () => {
+        btn.addEventListener("click", (e) => {
             fileAttachPopup.classList.remove("active");
         });
     });
@@ -983,7 +737,7 @@ if (fileAttachBtn && fileAttachPopup) {
     // 딤 클릭으로 닫기
     const dim = fileAttachPopup.querySelector(".layer-popup-dim");
     if (dim) {
-        dim.addEventListener("click", () => {
+        dim.addEventListener("click", (e) => {
             fileAttachPopup.classList.remove("active");
         });
     }
@@ -991,7 +745,7 @@ if (fileAttachBtn && fileAttachPopup) {
     // 확인 버튼 클릭 시 자기소개서 적용
     const confirmBtn = fileAttachPopup.querySelector(".btn-confirm");
     if (confirmBtn) {
-        confirmBtn.addEventListener("click", () => {
+        confirmBtn.addEventListener("click", (e) => {
             if (selectedFile) {
                 addAttachedFile(selectedFile);
                 fileAttachPopup.classList.remove("active");
@@ -1095,9 +849,17 @@ if (fileSelectBtn && fileInput) {
 // 지원하기 버튼 클릭
 const submitApplyBtn = document.querySelector("#applyModal .dev-btn-apply");
 if (submitApplyBtn) {
-    submitApplyBtn.addEventListener("click", () => {
-        alert("지원이 완료되었습니다!");
-        closeApplyModal();
+    submitApplyBtn.addEventListener("click", (e) => {
+        if (!phoneValue.textContent.trim() && !emailValue.textContent.trim()) {
+            alert("핸드폰 번호와 이메일을 입력해주세요.");
+        } else if (!emailValue.textContent.trim()) {
+            alert("이메일을 확인해주세요");
+        } else if (!phoneValue.textContent.trim()) {
+            alert("핸드폰번호 입력.");
+        } else {
+            alert("신청이 완료되었습니다!");
+            closeApplyModal();
+        }
     });
 }
 

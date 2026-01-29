@@ -15743,6 +15743,7 @@ i.jds-icon, i.jds-icon:before {
     justify-content: center;
     flex-shrink: 0;
     transition: background 0.2s;
+    position: relative;
 }
 
 .attached-file-delete:hover {
