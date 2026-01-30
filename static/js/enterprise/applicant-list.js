@@ -57,6 +57,9 @@ document.addEventListener("click", () => {
 const filterBtnList = document.querySelectorAll(".filter-option");
 const addbox = document.querySelector(".selected-filters");
 const modalResetBtn = document.querySelector(".btn-filter-reset");
+const maleCheckbox = document.getElementById("gender-male");
+const femaleCheckbox = document.getElementById("gender-female");
+
 console.log(modalResetBtn);
 
 filterBtnList.forEach((list, i) => {
@@ -107,106 +110,151 @@ filterBtnList.forEach((list, i) => {
         filterBtnList[index].classList.remove("active");
         item.remove();
     });
-});
 
-// 검색 누르면 위의 숨겨진 input에 값 입력
-const searchBtn = document.querySelector(".btn-search");
-const searchDiv = document.querySelectorAll(".selected-filter-tag");
+    maleCheckbox.addEventListener("change", (e) => {
+        const value = "남성";
+        const spanId = `filterMale`;
+        const isActive = maleCheckbox.classList.toggle("active");
 
-console.log(searchDiv);
+        const existSpan = document.getElementById(spanId);
 
-// 승인 버튼 클릭시 실시간으로 span입력
+        if (maleCheckbox.checked) {
+            const span = document.createElement("span");
+            span.id = spanId;
+            span.classList.add("selected-filter-tag");
+            span.textContent = value;
+            console.log(value);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "btnSelDel mtcBtnB devFilterItemDelBtn";
+            btn.dataset.filterGroup = "1_" + (i + 1);
 
-const applicantApproveBtn = document.querySelectorAll(".btn-approve");
-const liveTimeStamp = document.querySelectorAll(".approval-time");
-const approvemodalOverlay = document.querySelector(".modal--approve");
+            const skip = document.createElement("span");
+            skip.className = "blind";
+            skip.textContent = "삭제";
 
-applicantApproveBtn.forEach((Btn, i) => {
-    Btn.addEventListener("click", (e) => {
-        if (liveTimeStamp[i].querySelector("span")) return;
+            span.append(btn);
+            btn.append(skip);
 
-        const now = new Date();
+            addbox.append(span);
+        }
 
-        const year = now.getFullYear();
-        const month = String(now.getMonth() + 1).padStart(2, "0"); // 월은 0부터 시작하므로 +1 [1, 8]
-        const date = String(now.getDate()).padStart(2, "0");
-        const hours = String(now.getHours()).padStart(2, "0"); // 24시간 형식 [1]
-        const minutes = String(now.getMinutes()).padStart(2, "0");
-        const seconds = String(now.getSeconds()).padStart(2, "0");
-
-        const timeText = `${year}년${month}월${date}일${hours}시간${minutes}분`;
-
-        const spanId = `stamps${i}`;
-        const span = document.createElement("span");
-        span.textContent = timeText;
-
-        liveTimeStamp[i].append(span);
-    });
-});
-
-// 승인 버튼을 누르면 상태에 승인인지 반려인지 선택
-const approvalBtn = document.querySelector(".btn-approve");
-const rejectBtn = document.querySelector(".btn-reject");
-const statusText = document.querySelectorAll(".approval-name");
-const isChecks = document.querySelectorAll(".checkbox-item");
-
-console.log(statusText);
-isChecks.forEach((check) => console.log(check.checked));
-
-approvalBtn.addEventListener("click", (e) => {
-    isChecks.forEach((check, i) => {
-        if (check.checked) {
-            const approval = document.createElement("span");
-            approval.classList.add("approval-name");
-            approval.style.color = "#5288FF";
-            approval.textContent = "승인";
-
-            statusText[i].append(approval);
-            check.checked = false;
+        if (!maleCheckbox.checked || existSpan) {
+            existSpan.remove();
         }
     });
+
+    femaleCheckbox.addEventListener("change", (e) => {
+        const value = "여성";
+        const spanId = `filterFemale`;
+        const isActive = femaleCheckbox.classList.toggle("active");
+
+        const existSpan = document.getElementById(spanId);
+
+        if (femaleCheckbox.checked) {
+            const span = document.createElement("span");
+            span.id = spanId;
+            span.classList.add("selected-filter-tag");
+            span.textContent = value;
+            console.log(value);
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "btnSelDel mtcBtnB devFilterItemDelBtn";
+            btn.dataset.filterGroup = "1_" + (i + 1);
+
+            const skip = document.createElement("span");
+            skip.className = "blind";
+            skip.textContent = "삭제";
+
+            span.append(btn);
+            btn.append(skip);
+
+            addbox.append(span);
+        }
+
+        if (!femaleCheckbox.checked || existSpan) {
+            existSpan.remove();
+        }
+    });
+
+    modalResetBtn.addEventListener("click", () => {
+        // 1. 필터 버튼 active 제거
+        filterBtnList.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        // 2. 선택된 필터 태그 전부 제거
+        addbox.innerHTML = "";
+
+        // 3. 성별 체크박스 초기화
+        maleCheckbox.checked = false;
+        femaleCheckbox.checked = false;
+
+        maleCheckbox.classList.remove("active");
+        femaleCheckbox.classList.remove("active");
+    });
+});
+
+// 검색에서 초기화 버튼 누를 시 초기화
+const filterResetBtn = document.querySelector(".btn-clear-filters");
+const filterList = document.querySelectorAll(".filter-list__items");
+const listdelete = document.querySelectorAll(".selected-filter-tag-bar");
+
+filterResetBtn.addEventListener("click", (e) => {
+    filterList.forEach((list) => list.remove());
+});
+
+// 승인 완료 모달 열고 닫기
+const approvalBtn = document.querySelector(".btn-approve");
+const rejectBtn = document.querySelector(".btn-reject");
+
+const approvalModal = document.querySelector(".modal--approve");
+const rejectModal = document.querySelector(".modal--reject");
+const modal_Btn = document.querySelectorAll(".modal__confirm");
+
+approvalBtn.addEventListener("click", (e) => {
+    approvalModal.classList.add("active");
 });
 
 rejectBtn.addEventListener("click", (e) => {
-    isChecks.forEach((check, i) => {
-        if (check.checked) {
-            const approval = document.createElement("span");
-            approval.classList.add("approval-name");
-            approval.style.color = "#FF501B";
-            approval.textContent = "반려";
+    rejectModal.classList.add("active");
+});
 
-            statusText[i].append(approval);
-            check.checked = false;
+modal_Btn.forEach((Btn, i) => {
+    Btn.addEventListener("click", (e) => {
+        if (Btn.classList.contains("approve")) {
+            approvalModal.classList.remove("active");
+        } else if (Btn.classList.contains("reject")) {
+            rejectModal.classList.remove("active");
         }
     });
 });
 
-// const approvalBtn = document.querySelector(".btn-approve");
-// const statusTexts = document.querySelectorAll(".approval-name");
-// const checkboxes = document.querySelectorAll(".checkbox-item");
+// 체크 박스 클릭시 리스트에 모든 체크 박스 클릭
+const checkAll = document.querySelector(".checkbox-all");
+const checkItems = document.querySelectorAll(".checkbox-item");
 
-// const APPROVAL = "승인";
-// const REJECT = "반려";
+console.log(checkAll);
+console.log(checkItems);
 
-// // 승인 버튼 클릭
-// approvalBtn.addEventListener("click", (e) => {
-//     // 체크된 행들 찾기
-//     const checkedRows = Array.from(checkboxes).filter((cb) => cb.checked);
+checkAll.addEventListener("change", (e) => {
+    if (checkAll.checked === true) {
+        checkItems.forEach((check, i) => {
+            check.checked = true;
+        });
+    }
+    if (checkAll.checked === false) {
+        checkItems.forEach((check, i) => {
+            check.checked = false;
+        });
+    }
+});
 
-//     checkedRows.forEach((checkbox) => {
-//         // 체크박스가 속한 행(tr) 찾기
-//         const row = checkbox.closest(".applicant-row");
-//         // 그 행의 상태 텍스트 찾기
-//         const statusText = row.querySelector(".approval-name");
+let checkedCount = 0;
 
-//         if (statusText) {
-//             statusText.textContent = APPROVAL;
-//             checkbox.checked = false;
-//         }
-//     });
-// });
-
-// 검색하기 누르면 숨겨진 영역에 필터 체크한 것 나오게
-
-// const hiddenFilter = document.querySelector(".filter-list");
-// console.log(hiddenFilter);
+checkItems.forEach((check) => {
+    check.addEventListener("change", () => {
+        checkedCount += check.checked ? 1 : -1;
+        checkAll.checked = checkedCount === checkItems.length;
+    });
+});

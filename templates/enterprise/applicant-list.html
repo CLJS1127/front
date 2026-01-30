@@ -38,15 +38,15 @@
                                 </span>
                             </li>
                             <li>
-                                <button type="button" class="btn-action btn-approve">승인하기</button>
-                                <button type="button" class="btn-action btn-reject">반려하기</button>
+                                <button type="button" class="btn-action btn-approve" style="background-color: #006E3F; color: #fff;">승인하기</button>
+                                <button type="button" class="btn-action btn-reject" style="background-color: #006E3F; color: #fff;">반려하기</button>
                             </li>
                         </ul>
                     </div>
 
                     <!-- 검색 및 필터 영역 -->
                     <div class="search-filter-area">
-                        <a href="#" class="btn-print">인쇄하기</a>
+                        
                         
                         <form id="searchForm" autocomplete="off">
                             <input type="hidden" name="page" value="1">
@@ -154,7 +154,8 @@
 
                                 <!-- 필터 하단 버튼 -->
                                 <div class="filter-footer">
-                                    <div class="selected-filters"></div>
+                                    <div class="selected-filters">
+                                    </div>
                                     <button type="button" class="btn-filter-search">검색하기</button>
                                     <button type="button" class="btn-filter-reset">초기화</button>
                                 </div>
@@ -163,10 +164,15 @@
                     </div>
 
                     <!-- 선택된 필터 표시 영역 -->
-                    <div class="active-filters" style="display: none;">
+                    <div class="active-filters" style="display: one;">
                         <ul class="filter-list">
                             <li class="filter-list__label">검색조건</li>
-                            <li class="filter-list__items"></li>
+                            <li class="filter-list__items">
+                                <span id="filter0" class="selected-filter-tag-bar">고등학교 졸업<button type="button" class="btnSelDel mtcBtnB devFilterItemDelBtn" data-filter-group="1_1"><span class="blind">삭제</span></button></span>                 
+                            </li>
+                            <li class="filter-list__items">
+                                <span id="filter4" class="selected-filter-tag-bar">신입<button type="button" class="btnSelDel mtcBtnB devFilterItemDelBtn" data-filter-group="1_5"><span class="blind">삭제</span></button></span>
+                            </li>
                         </ul>
                         <button class="btn-clear-filters">초기화</button>
                     </div>
@@ -221,10 +227,10 @@
                                     <button type="button" class="btn-action btn-view-statement">자기소개서 보기</button>
                                 </td>
                                 <td>
-                                    <span class="approval-name"></span>
+                                    <span class="approval-name" style="color: #5288FF;">승인</span>
                                 </td>
                                 <td>
-                                    <span class="approval-time"></span>
+                                    <span class="approval-time">2026년 01월 30일 15시 20분</span>
                                 </td>
                                 <td></td>
                             </tr>
@@ -254,7 +260,7 @@
                                     <button type="button" class="btn-action btn-view-statement">자기소개서 보기</button>
                                 </td>
                                 <td>
-                                    <span class="approval-name"></span>
+                                    <span class="approval-name" style="color: #FF501B;">반려</span>
                                 </td>
                                 <td>
                                     <span class="approval-time"></span>
@@ -328,7 +334,7 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <p class="modal__message">승인이 완료되었습니다.</p>
-            <button type="button" class="modal__confirm">확인</button>
+            <button type="button" class="modal__confirm approve">확인</button>
         </div>
     </div>
 
@@ -337,7 +343,7 @@
         <div class="modal__overlay"></div>
         <div class="modal__content">
             <p class="modal__message">반려가 완료되었습니다.</p>
-            <button type="button" class="modal__confirm">확인</button>
+            <button type="button" class="modal__confirm reject">확인</button>
         </div>
     </div>
 
