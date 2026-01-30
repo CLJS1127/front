@@ -888,3 +888,28 @@ modalInputs.forEach((input) => {
         }
     });
 });
+
+const stars = document.querySelectorAll(".a0bx31");
+stars.forEach((star) => {
+    star.addEventListener("click", (e) => {
+        e.target.classList.toggle("jds-icon--system_scrap_on");
+        e.target.classList.toggle("jds-icon--system_scrap");
+        e.target.classList.toggle("Icon_color_gray300__1516qwbb");
+        e.target.classList.toggle("Icon_color_yellow__1516qwbd");
+    });
+});
+
+// 지금 공고 스크랩
+const nowScrabStar = document.querySelector(
+    ".Button_root__1c0cohd0.Button_variantColor_outlined-black__1c0cohdb.Button_size_52__1c0cohd5._1v0lx8e0",
+);
+const star = document.querySelector(
+    ".jds-icon.jds-icon--system_scrap.Icon_root__1516qwb0.Icon_color_gray900__1516qwb1.Icon_size_24__1516qwbm",
+);
+
+nowScrabStar.addEventListener("click", (e) => {
+    star.classList.toggle("jds-icon--system_scrap_on");
+    star.classList.toggle("jds-icon--system_scrap");
+    star.classList.toggle("Icon_color_yellow__1516qwbd");
+    star.classList.toggle("Icon_color_gray900__1516qwb1");
+});

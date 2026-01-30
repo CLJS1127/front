@@ -14586,10 +14586,6 @@ i.jds-icon {
     content: "\f16f";
 }
 
-i.jds-icon, i.jds-icon:before {
-    vertical-align: top;
-}
-
 ._1nm47mv0:hover {
     background-color: var(--tooltip-button-wrapper-hover);
 }
@@ -14618,6 +14614,10 @@ i.jds-icon, i.jds-icon:before {
 .ChipSubway_root__16svqkb0 {
     padding: var(--jds-space-space4) var(--jds-space-space8);
     border-radius: var(--jds-radius-radius999);
+}
+
+._1v0lx8e0:hover {
+    border-color: var(--gray-400);
 }
 
 .ChipSubway_variant_linebusan1__16svqkbc {
@@ -14938,10 +14938,6 @@ i.jds-icon, i.jds-icon:before {
     position: absolute;
     top: 16px;
     right: 16px;
-}
-
-.jds-icon--system_scrap:before {
-    content: "\f16a";
 }
 
 .a0bx33 {
