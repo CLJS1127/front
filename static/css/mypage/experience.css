@@ -1977,7 +1977,7 @@ input[type=date], input[type=file], input[type=number], input[type=password], in
 }
 
 .schFillter.mtuSortArea .formBx .ipTxt.ipDate {
-    width: 100px;
+    width: 120px;
 }
 
 .mtuSortArea .selDateLabel {

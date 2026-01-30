@@ -616,4 +616,14 @@ input.ipText, textarea.ipTextarea, select.ipSelect {
     height: 0;
     clear: both;
 }
-
+a.kakao {
+    display: none;
+    width: 24px;
+    height: 24px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iaWNvX3Nuc19rYWthb180MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgNDAgNDAiPg0KICA8ZGVmcz4NCiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+DQogICAgICA8cmVjdCBpZD0i7IKs6rCB7ZiVXzIyNCIgZGF0YS1uYW1lPSLsgqzqsIHtmJUgMjI0IiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiLz4NCiAgICA8L2NsaXBQYXRoPg0KICA8L2RlZnM+DQogIDxnIGlkPSLqt7jro7lfMjgzIiBkYXRhLW5hbWU9Iuq3uOujuSAyODMiIGNsaXAtcGF0aD0idXJsKCNjbGlwLXBhdGgpIj4NCiAgICA8cGF0aCBpZD0i7Yyo7IqkXzU1IiBkYXRhLW5hbWU9Iu2MqOyKpCA1NSIgZD0iTTQwLDIwQTIwLDIwLDAsMSwxLDIwLDAsMjAsMjAsMCwwLDEsNDAsMjAiIGZpbGw9IiNmZWU1MDAiLz4NCiAgICA8cGF0aCBpZD0i7Yyo7IqkXzU2IiBkYXRhLW5hbWU9Iu2MqOyKpCA1NiIgZD0iTTE1LDYuMjVjLTUuMjQzLDAtOS40OTMsMy4zLTkuNDkzLDcuMzY5YTcuMDk0LDcuMDk0LDAsMCwwLDQuMTQ4LDYuMDg5TDguNiwyMy41NzNhLjM4Ny4zODcsMCwwLDAsLjI4MS40NzEuMzgxLjM4MSwwLDAsMCwuMzEzLS4wNTVsNC42MjItMy4wNmMuMzkxLjAzNi43ODYuMDU5LDEuMTkuMDU5LDUuMjQxLDAsOS40OTMtMy4zLDkuNDkzLTcuMzY5UzIwLjI0NCw2LjI1LDE1LDYuMjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQuOTk3IDUuNzUpIi8+DQogIDwvZz4NCjwvc3ZnPg0K) no-repeat center center;
+    background-size: contain;
+    vertical-align: middle;
+    margin-left: 8px;
+    text-indent: -9999px;  /* 텍스트 숨김 */
+    overflow: hidden;
+}
