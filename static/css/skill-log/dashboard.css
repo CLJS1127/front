@@ -767,6 +767,10 @@ body.ctFixedMode {
     margin-bottom: -1px;
 }
 
+.pageTab .tabs li:nth-child(-n+4):hover {
+    border: 1px solid #006e3f;
+}
+
 .pageTab .tabs li:nth-child(-n+4) {
     border-bottom: 1px solid #e8e8e8;
 }

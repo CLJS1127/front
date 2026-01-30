@@ -1,10 +1,3 @@
-// 즐겨찾기
-const addLike = document.querySelector(".button.button-bookmark");
-
-addLike.addEventListener("click", (e) => {
-    alert("Ctrl + D를 이용해 이 페이지를 즐겨찾기에 추가하실 수 있습니다.");
-});
-
 // 신고 버튼
 
 // 신고 열리는 버튼
@@ -17,11 +10,6 @@ const pressReportButton = document.querySelector(".mtuLyWrap.lyQnaReport");
 const pressReportButtonClose = document.querySelector(
     ".butClose.mtuSpImg.devLyBtnClose",
 );
-// 신고창 취소 버튼
-const btnReportCancel = document.querySelector(
-    ".btnCancel.bg_white.devLyBtnClose",
-);
-
 // 신고창 text-area 문구
 const reportFormBox = document.querySelector(
     ".qnaFormBx.qnaTxaBx.devTplSchPh span",
@@ -35,11 +23,7 @@ const reportFirstReasonRadio = document.querySelectorAll(
     ".reportBx.radioCommWrap li input",
 );
 
-// 신고창 취소버튼
-btnReportCancel.addEventListener("click", (e) => {
-    pressReportButton.style.display = "none";
-});
-
+console.log(reportFirstReasonRadio);
 // 댓글에 신고버튼
 const commentReportButtons = document.querySelectorAll(
     ".btnReport.devBtnReport",
@@ -58,7 +42,7 @@ reportSubmitButton.addEventListener("click", (e) => {
     );
     if (reportSubmitMessage) {
         alert("신고 처리 완료되었습니다.");
-        location.href = "../skill-log/log-detail.html";
+        location.href = "../community/QnA-detail.html";
     }
 });
 // 신고창 text-area 누를 시 문구 삭제
@@ -87,6 +71,13 @@ reportActiveButton.addEventListener("click", (e) => {
 
 // 신고창 닫기
 pressReportButtonClose.addEventListener("click", (e) => {
+    pressReportButton.style.display = "none";
+});
+
+const pressReportCancelButton = document.querySelector(
+    ".btnCancel.bg_white.devLyBtnClose",
+);
+pressReportCancelButton.addEventListener("click", (e) => {
     pressReportButton.style.display = "none";
 });
 
@@ -131,6 +122,12 @@ URLCopy.addEventListener("click", (e) => {
 // 닫기 버튼 누르면 "attached" 클래스 삭제
 URLCopyLayerBefore.addEventListener("click", (e) => {
     URLCopyLayer.classList.remove("attached");
+});
+
+// 즐겨찾기 누를 시(로그인)
+const addLike = document.querySelector(".button.button-bookmark");
+addLike.addEventListener("click", (e) => {
+    alert("Ctrl+D 를 이용해 이 페이지를 즐겨찾기에 추가할 수 있습니다.");
 });
 
 // 게시글(질문) 좋아요(로그인)
@@ -311,13 +308,12 @@ emotionButtons.forEach((emotionButton) => {
         if (uiPlaceholder) uiPlaceholder.classList.add("focus");
         if (ph1) ph1.style.display = "none";
 
-        //  textarea에 글이 있는지 확인
+        // ✅ textarea에 글이 있는지 확인
         const textarea = writeBoxWrap.querySelector("textarea");
         if (ph2) {
             ph2.style.display = textarea?.value ? "none" : "block";
         }
-
-        //  기존 attach-wrap 삭제 (하나만 허용)
+        // ✅ 기존 attach-wrap 삭제 (하나만 허용)
         const existingAttach = uiPlaceholder?.querySelector(".attach-wrap");
         if (existingAttach) existingAttach.remove();
 
@@ -369,7 +365,7 @@ addFiles.forEach((addFile) => {
         if (uiPlaceholder) uiPlaceholder.classList.add("focus");
         if (ph1) ph1.style.display = "none";
 
-        //  textarea에 글이 있는지 확인
+        // ✅ textarea에 글이 있는지 확인
         const textarea = writeBoxWrap.querySelector("textarea");
         if (ph2) {
             ph2.style.display = textarea?.value ? "none" : "block";
@@ -380,17 +376,17 @@ addFiles.forEach((addFile) => {
 
         reader.addEventListener("load", (e) => {
             const path = e.target.result;
+
             if (!path.includes("image")) {
-                alert("이미지 파일만 올릴 수 있습니다.");
+                alert("이미지 파일로 올려주세요.");
                 return;
             }
-
             const imgPathInput = writeBoxWrap.querySelector(
                 "#Img_Path, [id*='Img_Path']",
             );
             if (imgPathInput) imgPathInput.value = path;
 
-            // 기존 attach-wrap 삭제 (하나만 허용)
+            // ✅ 기존 attach-wrap 삭제 (하나만 허용)
             const existingAttach = uiPlaceholder?.querySelector(".attach-wrap");
             if (existingAttach) existingAttach.remove();
 
@@ -424,7 +420,7 @@ const wrappers = document.querySelectorAll(".writeBoxWrap.cmtWrite");
 wrappers.forEach((wrapper) => {
     const textarea = wrapper.querySelector("textarea");
 
-    //  wrapper 안에서 직접 찾기
+    // ✅ wrapper 안에서 직접 찾기
     const ph1 = wrapper.querySelector(".ph_1");
     const ph2 = wrapper.querySelector(".ph_2");
     const uiPlaceholder = wrapper.querySelector(".uiPlaceholder");
@@ -495,14 +491,14 @@ const replyOfReplySubmitButtons = document.querySelectorAll(
 // 대댓글 달기(로그인)
 replyOfReplySubmitButtons.forEach((replyOfReplySubmitButton) => {
     replyOfReplySubmitButton.addEventListener("click", (e) => {
-        location.href = "../skill-log/log-detail.html";
+        location.href = "../community/QnA-detail.html";
     });
 });
 
 // 댓글 달기(로그인)
 replySubmitButton.addEventListener("click", (e) => {
     alert("댓글이 등록되었습니다.");
-    location.href = "../skill-log/log-detail.html";
+    location.href = "../community/QnA-detail.html";
 });
 
 // 댓글 삭제(로그인)
@@ -519,10 +515,25 @@ deleteReplyOfButtons.forEach((deleteButton) => {
 
         if (isDelete) {
             // 사용자가 '확인'을 눌렀을 때만 실행
-            alert("삭제되었습니다."); // 삭제 완료 알림
-            location.href = "../skill-log/log-detail.html"; // 페이지 이동
+            alert("삭제되었습니다."); // (선택사항) 삭제 완료 알림
+            location.href = "../community/QnA-detail.html"; // 페이지 이동
         } else {
-            // 함수 종료
+            // 사용자가 '취소'를 누르면 아무 일도 일어나지 않음 (함수 종료)
+            return;
+        }
+    });
+});
+deleteReplyButtons.forEach((deleteButton) => {
+    deleteButton.addEventListener("click", (e) => {
+        // confirm은 확인(true) 또는 취소(false)를 반환합니다.
+        const isDelete = confirm("정말로 댓글을 삭제 하시겠습니까?");
+
+        if (isDelete) {
+            // 사용자가 '확인'을 눌렀을 때만 실행
+            alert("삭제되었습니다."); // (선택사항) 삭제 완료 알림
+            location.href = "../community/QnA-detail.html"; // 페이지 이동
+        } else {
+            // 사용자가 '취소'를 누르면 아무 일도 일어나지 않음 (함수 종료)
             return;
         }
     });
@@ -557,7 +568,7 @@ modifyAnswerButtons.forEach((modifyAnswerButton) => {
             }
         }
 
-        // placeholder span 숨기기
+        // ✅ placeholder span 숨기기
         const ph1 = modifyContSec.querySelector(".ph_1");
         const ph2 = modifyContSec.querySelector(".ph_2");
         if (ph1) ph1.style.display = "none";
@@ -612,7 +623,7 @@ myComtUpdateButtons.forEach((myComtUpdateButton) => {
     });
 });
 
-// 취소 버튼 이벤트 (로그인)
+// ✅ 취소 버튼 이벤트 (로그인)
 const modifyCancelButtons = document.querySelectorAll(
     ".btnModifyCancel.qnaSpB",
 );
@@ -628,7 +639,7 @@ modifyCancelButtons.forEach((modifyCancelButton) => {
     });
 });
 
-// 등록 버튼 이벤트 (로그인)
+// ✅ 등록 버튼 이벤트 (로그인)
 const modifySubmitButtons = document.querySelectorAll(
     ".btnSbm.devAnswerEditSubmitButton",
 );
@@ -636,6 +647,6 @@ const modifySubmitButtons = document.querySelectorAll(
 modifySubmitButtons.forEach((modifySubmitButton) => {
     modifySubmitButton.addEventListener("click", (e) => {
         alert("댓글 등록이 완료되었습니다.");
-        location.href = "../skill-log/log-detail.html";
+        location.href = "../community/QnA-detail.html";
     });
 });
