@@ -112,12 +112,12 @@ input[type="checkbox"] {
 }
 
 .status-tab:hover {
-    color: #39f;
+    color: #006E3F;
 }
 
 .status-tab.active {
     font-weight: 700;
-    color: #39f;
+    color: #006E3F;
 }
 
 .status-tab.active::before {
@@ -129,7 +129,7 @@ input[type="checkbox"] {
     height: 4px;
     display: block;
     width: calc(100% + 24px);
-    background: #39f;
+    background: #006E3F;
 }
 
 .status-tab em {
@@ -162,7 +162,7 @@ input[type="checkbox"] {
 }
 
 /* 인쇄 버튼 */
-.btn-print {
+/* .btn-print {
     float: left;
     margin-top: 6px;
     padding-left: 23px;
@@ -174,7 +174,7 @@ input[type="checkbox"] {
 
 .btn-print:hover {
     opacity: 0.8;
-}
+} */
 
 /* 드롭다운 */
 .dropdown-wrapper {
@@ -335,12 +335,12 @@ input[type="checkbox"] {
 }
 
 .filter-option:hover {
-    color: #39f;
+    color: #7BA882;
 }
 
 .filter-option.active {
     font-weight: 700;
-    color: #39f;
+    color: #006E3F;
 }
 
 /* 성별 옵션 */
@@ -366,7 +366,7 @@ input[type="checkbox"] {
 }
 
 .checkbox-wrapper input:checked + label {
-    background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
+    background-image: url(../../images/label_checkbox_common_on_recolor_006e3f.png);
 }
 
 /* 기타 조건 그리드 */
@@ -416,7 +416,7 @@ input[type="checkbox"] {
 
 .btn-filter-search {
     padding: 8px 24px;
-    background: #39f;
+    background: #006E3F;
     color: #fff;
     border-radius: 4px;
     font-size: 14px;
@@ -424,8 +424,27 @@ input[type="checkbox"] {
     transition: background 0.3s;
 }
 
+.selected-filter-tag-bar{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.selected-filter-tag-bar button {
+    width: 12px;
+    height: 12px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkgM0wzIDkiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8cGF0aCBkPSJNMyAzTDkgOSIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+Cjwvc3ZnPgo=) no-repeat center;
+    background-size: contain;
+}
+
+
 .btn-filter-search:hover {
-    background: #2080e0;
+    background: #7BA882;
 }
 
 .btn-filter-reset {
@@ -537,7 +556,7 @@ input[type="checkbox"] {
 
 .checkbox-all:checked + label,
 .checkbox-item:checked + label {
-    background-image: url(https://i.jobkorea.kr/content/images/corporate/position/label_checkbox_common_on.png);
+    background-image: url(../../images/label_checkbox_common_on_recolor_006e3f.png);
 }
 
 /* 지원자 행 */
