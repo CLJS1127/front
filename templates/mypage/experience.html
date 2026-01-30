@@ -253,57 +253,25 @@
                                         <label class="selDateLabel"
                                             >날짜선택</label
                                         >
-                                        <div class="formBx">
+                                        <div class="formBx dateInputWrap">
                                             <input
                                                 class="ipTxt ipDate"
-                                                type="text"
+                                                type="date"
                                                 title="시작날짜선택"
                                                 name="From_Dt"
                                                 id="txtFromDt"
-                                                readonly=""
                                                 value="2025-10-31"
-                                            /><button
-                                                type="button"
-                                                class="btn btnCalc mtuSpImgBefore"
-                                                data-id="txtFromDt"
-                                                data-flag="1"
-                                            >
-                                                <span class="skip"
-                                                    >달력보기</span
-                                                >
-                                            </button>
-                                            ~
+                                            />
+                                            <span class="dateSeparator">~</span>
                                             <input
                                                 class="ipTxt ipDate"
-                                                type="text"
+                                                type="date"
                                                 title="마감날짜선택"
                                                 name="To_Dt"
                                                 id="txtToDt"
-                                                readonly=""
                                                 value="2026-01-29"
-                                            /><button
-                                                type="button"
-                                                class="btn btnCalc mtuSpImgBefore"
-                                                data-id="txtToDt"
-                                                data-flag="2"
-                                            >
-                                                <span class="skip"
-                                                    >달력보기</span
-                                                >
-                                            </button>
+                                            />
                                         </div>
-                                        <!-- 달력 시작 -->
-
-                                        <div
-                                            id="devPop"
-                                            style="
-                                                position: absolute;
-                                                z-index: 450;
-                                                left: 0;
-                                                top: 0;
-                                            "
-                                        ></div>
-                                        <!-- 달력 종료 -->
                                     </div>
                                     <div class="down">
                                         <label class="skip">키워드</label>
@@ -538,7 +506,7 @@
                                                         <a
                                                             href=""
                                                             target="_blank"
-                                                            >㈜제이투이</a
+                                                            >㈜test</a
                                                         >
                                                     </div>
                                                     <div class="description">
@@ -705,7 +673,7 @@
                                                         <a
                                                             href=""
                                                             target="_blank"
-                                                            >㈜제이투이</a
+                                                            >㈜test2</a
                                                         >
                                                     </div>
                                                     <div class="description">
@@ -713,9 +681,7 @@
                                                             href=""
                                                             target="_blank"
                                                         >
-                                                            [JAVA SI 상암]
-                                                            DevoPS 사업
-                                                            Front-end 개발 (5)
+                                                            test
                                                             (~2/3)
                                                         </a>
                                                     </div>
@@ -872,7 +838,7 @@
                                                         <a
                                                             href=""
                                                             target="_blank"
-                                                            >㈜제이투이</a
+                                                            >㈜test03</a
                                                         >
                                                     </div>
                                                     <div class="description">
@@ -880,10 +846,7 @@
                                                             href=""
                                                             target="_blank"
                                                         >
-                                                            [JAVA SI 상암]
-                                                            DevoPS 사업
-                                                            Front-end 개발 (5)
-                                                            (~2/3)
+                                                            test
                                                         </a>
                                                     </div>
                                                     <div class="meta">
@@ -1039,7 +1002,7 @@
                                                         <a
                                                             href=""
                                                             target="_blank"
-                                                            >㈜제이투이</a
+                                                            >㈜test04</a
                                                         >
                                                     </div>
                                                     <div class="description">
@@ -1047,10 +1010,7 @@
                                                             href=""
                                                             target="_blank"
                                                         >
-                                                            [JAVA SI 상암]
-                                                            DevoPS 사업
-                                                            Front-end 개발 (5)
-                                                            (~2/3)
+                                                            test
                                                         </a>
                                                     </div>
                                                     <div class="meta">
@@ -1288,6 +1248,131 @@
                 <!-- 사이드바 끝 -->
                 <!-- Lnb Area //-->
             </section>
+        </div>
+
+        <!-- 지원이력서 모달 -->
+        <div class="resume-modal-overlay" id="resumeModalOverlay">
+            <div class="resume-modal">
+                <div class="resume-modal-header">
+                    <h2>지원 이력서</h2>
+                    <button type="button" class="resume-modal-close" id="resumeModalClose">×</button>
+                </div>
+                <div class="resume-modal-body">
+                    <div class="resume-page">
+                        <div class="resume-view-wrapper">
+                            <div class="resume-header">
+                                <div class="subtitle">채용기업이 보는 이력서 열람화면입니다.</div>
+                            </div>
+                            <div class="resume-view-container">
+                                <div class="resume-application">
+                                    <div class="resume-application-title">[JAVA SI 상암] DevoPS 사업 Front-end 개발 (5)</div>
+                                    <div class="resume-application-meta">
+                                        <div class="item">
+                                            <div class="label">기업명</div>
+                                            <div class="value">㈜제이투이</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="label">지원분야</div>
+                                            <div class="value">JAVA/VUE.JS 개발자</div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="label">지원일</div>
+                                            <div class="value">2026.01.29</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="resume-subject">이력서</div>
+
+                                <div class="base profile">
+                                    <div class="container">
+                                        <div class="info-container">
+                                            <div class="info-general">
+                                                <div class="item name">test</div>
+                                                <div class="item sex">남</div>
+                                                <div class="item year">2000년</div>
+                                                <div class="item age">(만 25세)</div>
+                                            </div>
+                                            <div class="info-detail">
+                                                <div class="item">
+                                                    <div class="label">휴대폰</div>
+                                                    <div class="value">010-4090-2600</div>
+                                                </div>
+                                                <div class="item">
+                                                    <div class="label">Email</div>
+                                                    <div class="value">
+                                                        <a href="mailto:tedwin1@naver.com">tedwin1@naver.com</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item item-full">
+                                                    <div class="label">주소</div>
+                                                    <div class="value">서울 강남구 역삼동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="summary col-4">
+                                        <div class="item">
+                                            <div class="header">학력</div>
+                                            <div class="description ellipsis">test</div>
+                                            <div class="options">
+                                                <div class="option">대학교</div>
+                                                <div class="option">졸업</div>
+                                            </div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="header">경력</div>
+                                            <div class="description ellipsis">(주)test</div>
+                                            <div class="options">
+                                                <div class="option">재직 중</div>
+                                                <div class="option">총 2년</div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="item is-singleline">
+                                            <div class="header">인턴·대외활동 / 해외경험</div>
+                                            <div class="description">-</div>
+                                        </div>
+                                        <div class="item is-singleline">
+                                            <div class="header">자격증 / 어학</div>
+                                            <div class="description">-</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="base skill">
+                                    <div class="keyword-wrap">
+                                        <div class="keyword-box">
+                                            <div class="keyword-list">
+                                                <button type="button" class="list-btn"><span>JAVA</span></button>
+                                                <button type="button" class="list-btn"><span>MySQL</span></button>
+                                                <button type="button" class="list-btn"><span>Git</span></button>
+                                                <button type="button" class="list-btn"><span>Spring Boot</span></button>
+                                                <button type="button" class="list-btn"><span>API</span></button>
+                                                <button type="button" class="list-btn"><span>Python</span></button>
+                                                <button type="button" class="list-btn"><span>MariaDB</span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sign">
+                                    <div class="message">위의 모든 기재사항은 사실과 다름없음을 확인합니다.</div>
+                                    <div class="writer">작성자 : test</div>
+                                    <div class="warning">
+                                        <div class="description">
+                                            이 자기소개서는 2026년 01월 29일 (목)에 최종 수정된 이력서 입니다.<br>
+                                            위조된 문서를 등록하여 체험활동에 이용 시 법적 책임을 지게 될 수 있습니다.<br>
+                                            test는 구직자가 등록 한 문서에 대해 보증하거나 별도의 책임을 지지 않으며<br>
+                                            첨부된 문서를 신뢰하여 발생한 법적 분쟁에 책임을 지지 않습니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </body>

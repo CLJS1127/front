@@ -3224,183 +3224,367 @@ input[type=date], input[type=file], input[type=number], input[type=password], in
     display: block;
 }
 
-.yctrRgtCal .date {
-    text-align: center;
+/* input type="date" 스타일 */
+.dateInputWrap {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.yctrRgtCal .date h2 {
-    font-weight: bold;
+.dateSeparator {
+    color: #666;
+    font-size: 13px;
+}
+
+input[type="date"].ipDate {
+    width: 140px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid #ccc;
+    font-size: 13px;
     color: #333;
+    cursor: pointer;
+    background: #fff;
+    box-sizing: border-box;
 }
 
-.yctrRgtCal .date .bx {
-    border: 1px solid #e5e5e5;
-    width: 241px;
-    padding: 0 10px 0 11px;
-    margin: 6px auto 12px;
+input[type="date"].ipDate:hover {
+    border-color: #006e3f;
 }
 
-.yctrRgtCal .yearMonth {
-    position: relative;
-    width: 100%;
-    height: 32px;
-    padding-top: 11px;
-    text-align: center;
+input[type="date"].ipDate:focus {
+    outline: none;
+    border-color: #006e3f;
 }
 
-.yctrRgtCal .yearMonth strong {
-    font-size: 20px;
-    letter-spacing: -0.5px;
-    font-weight: bold;
-    color: #333;
+input[type="date"].ipDate::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    padding: 2px;
+    margin-left: 5px;
 }
 
-.yctrRgtBtn, .yctrRgtBtn button, .yctrRgtBtn input, .yctrRgtBtn a {
-    display: inline-block;
-}
+/* ============================================
+   지원이력서 모달 스타일
+   ============================================ */
 
-.yctrRgtBtn {
-    background: url(/static/images/register_pop_recolor_006e3f.png) no-repeat 0 0;
-    overflow: hidden;
-    vertical-align: middle;
-}
-
-.yctrRgtBtnPrev_1 {
-    width: 17px;
-    height: 18px;
-    background-position: -261px 0;
-}
-
-.yctrRgtCal .yearMonth .yctrRgtBtn {
-    position: absolute;
-}
-
-.yctrRgtCal .yearMonth .yctrRgtBtnPrev_1 {
-    left: 55px;
-    top: 15px;
-}
-
-.yctrRgtBtn, .yctrRgtBtn button, .yctrRgtBtn input, .yctrRgtBtn a {
-    display: inline-block;
-}
-
-.yctrRgtBtn button {
+/* 모달 오버레이 */
+.resume-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
 
-.yctrRgtBtn button span {
-    position: absolute;
-    top: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+.resume-modal-overlay.active {
+    display: flex;
 }
 
-.yctrRgtCal .yearMonth .yctrRgtBtnNext_1 {
-    right: 56px;
-    top: 15px;
-}
-
-.yctrRgtCal table {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.yctrRgtCal table th, .yctrRgtCal table td {
-    text-align: center;
-    vertical-align: middle;
-}
-
-.yctrRgtCal table th {
-    height: 24px;
-    background-color: #eff2f5;
-    color: #333;
-    font-size: 11px;
-    letter-spacing: 0px;
-}
-
-.yctrRgtCal table td a, .yctrRgtCal table td span {
-    display: block;
-    padding: 7px 0 8px;
-    color: #333;
-    font-size: 11px;
-    letter-spacing: 0px;
-}
-
-.yctrRgtCal table .sat a {
-    color: #006e3f;
-}
-
-.yctrRgtCal table td:first-child a {
-    color: #f33;
-}
-
-.yctrRgtCal table td.sDate a, .yctrRgtCal table .sDate {
-    color: #fff;
-    background-color: #006e3f;
-}
-
-.yctrRgtCal form {
-    clear: left;
-}
-
-.yctrRgtCal .apply {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 39px;
-    padding-top: 15px;
-    background-color: #f2f4f7;
-    text-align: center;
-}
-
-.yctrRgtCal .apply input {
-    width: 153px;
-    height: 22px;
-    line-height: 22px;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid #ccc;
-    color: #333;
-}
-
-.yctrRgtBtnSubmit_1 {
-    width: 35px;
-    height: 23px;
-    background-position: -220px 0;
-}
-
-.yctrLyBx .close {
-    position: absolute;
-    right: 8px;
-    top: 8px;
-}
-
-.yctrRgtBtnClose_2 {
-    width: 20px;
-    height: 20px;
-    background-position: -195px 0;
-}
-
-/* 달력 팝업 컨테이너 */
-.yctrRgtPop.yctrLyBx {
-    position: absolute;
+/* 모달 컨테이너 */
+.resume-modal {
     background: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    z-index: 500;
+    width: 800px;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
 }
 
-.yctrRgtCal {
-    width: 263px;
-    padding-bottom: 54px;
-    position: relative;
+/* 모달 헤더 */
+.resume-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
 }
 
-.yctrRgtBtnNext_1 {
-    width: 17px;
-    height: 18px;
-    background-position: -283px 0;
+.resume-modal-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+.resume-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.resume-modal-close:hover {
+    background: #e5e5e5;
+    color: #333;
+}
+
+/* 모달 바디 */
+.resume-modal-body {
+    padding: 25px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* 이력서 페이지 스타일 */
+.resume-page {
+    font-size: 14px;
+    color: #333;
+}
+
+.resume-view-wrapper {
+    background: #fff;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #006e3f;
+}
+
+.resume-header .subtitle {
+    font-size: 13px;
+    color: #666;
+}
+
+.resume-header .button-print {
+    padding: 8px 16px;
+    border: 1px solid #006e3f;
+    background: #fff;
+    color: #006e3f;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.resume-header .button-print:hover {
+    background: #006e3f;
+    color: #fff;
+}
+
+/* 지원 정보 */
+.resume-application {
+    background: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.resume-application-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.resume-application-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.resume-application-meta .item {
+    display: flex;
+    gap: 10px;
+}
+
+.resume-application-meta .label {
+    font-size: 13px;
+    color: #666;
+}
+
+.resume-application-meta .value {
+    font-size: 13px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* 이력서 제목 */
+.resume-subject {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* 프로필 섹션 */
+.base.profile {
+    margin-bottom: 25px;
+}
+
+.base.profile .container {
+    margin-bottom: 20px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-general {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.info-general .name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+}
+
+.info-general .sex,
+.info-general .year,
+.info-general .age {
+    font-size: 14px;
+    color: #666;
+}
+
+.info-detail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.info-detail .item {
+    display: flex;
+    gap: 8px;
+}
+
+.info-detail .item-full {
+    width: 100%;
+}
+
+.info-detail .label {
+    font-size: 13px;
+    color: #666;
+    min-width: 50px;
+}
+
+.info-detail .value {
+    font-size: 13px;
+    color: #333;
+}
+
+.info-detail .value a {
+    color: #006e3f;
+    text-decoration: underline;
+}
+
+/* 요약 섹션 */
+.summary.col-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.summary .item {
+    text-align: center;
+}
+
+.summary .item .header {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.summary .item .description {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.summary .item .options {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.summary .item .option {
+    font-size: 12px;
+    color: #666;
+}
+
+/* 스킬 섹션 */
+.base.skill {
+    margin: 25px 0;
+}
+
+.keyword-wrap {
+    padding: 15px 0;
+}
+
+.keyword-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.keyword-list .list-btn {
+    padding: 6px 14px;
+    border: 1px solid #006e3f;
+    background: #fff;
+    color: #006e3f;
+    font-size: 13px;
+    border-radius: 20px;
+    cursor: default;
+}
+
+/* 서명 섹션 */
+.sign {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.sign .message {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.sign .writer {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.sign .warning {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.sign .warning .description {
+    font-size: 12px;
+    color: #999;
+    line-height: 1.6;
 }

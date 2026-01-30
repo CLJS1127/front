@@ -1344,6 +1344,7 @@
                         data-accent-color="gray900"
                         data-sentry-element="Typography"
                         data-sentry-source-file="index.tsx"
+                        id = "test"
                         class="Typography_variant_size24__344nw23 Typography_weight_bold__344nw2c Typography_color_gray900__344nw2l styles_mb_space12__dk46ts1b"
                     >
                         지원자격
@@ -3768,6 +3769,212 @@
                 </aside>
             </div>
             <!-- 이자리에 챗봇 넣으면 됨. -->
+
+            <!-- 즉시지원 모달 -->
+            <div class="apply-modal-overlay" id="applyModalOverlay">
+                <div class="apply-modal" id="applyModal">
+                    <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="닫기">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div id="onPassWrap">
+                        <form method="post" action="/Recruit/OnPass/OnPassApply" id="devForm" name="devForm">
+                            <input type="hidden" name="Oem_No" id="Oem_No" value="1">
+                            <input type="hidden" name="Gno" id="Gno" value="48436229">
+                            <input type="hidden" name="GI_No" value="50244893">
+                            <input type="hidden" name="M_ID" id="M_ID" value="egg3256">
+                            <input type="hidden" name="Pass_Match" value="1">
+
+                            <div class="apply-page">
+                                <div class="page-content">
+                                    <div class="apply-job-info">
+                                        <h2 class="job-title">
+                                            [부산 중구] 조리사(셰프) 정규직/파트타이머 채용
+                                        </h2>
+                                        <div class="job-meta">
+                                            <span class="job-badge">지원분야</span>
+                                            <p class="job-description">
+                                                요리사, 조리사, 셰프·주방장
+                                            </p>
+                                            <input name="PartIDX" type="hidden" value="39422649">
+                                        </div>
+                                    </div>
+                                    <div class="apply-form">
+                                        <!-- 자기소개서 섹션 -->
+                                        <div class="form-section form-section--resume dev-jobkorea-resume" data-pass-gbn="1">
+                                            <div class="section-header">
+                                                <p class="section-title">자기소개서</p>
+                                            </div>
+                                            <div class="section-content" data-current-r-no="18818347">
+                                                <div class="resume-info">
+                                                    <div class="resume-info-header">
+                                                        <span class="resume-tag">기본</span>
+                                                        <span class="resume-name">맡은 일에 최선을 다하는 알바생 입니다.</span>
+                                                    </div>
+                                                    <p class="resume-date">2026.01.29 저장</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 첨부파일 섹션 -->
+                                        <div class="form-section form-section--attachment dev-attachment-section">
+                                            <div class="section-header">
+                                                <p class="section-title">첨부파일</p>
+                                            </div>
+                                            <div class="attached-files-list" id="attachedFilesList" style="display: none;">
+                                                <!-- 첨부된 파일이 여기에 표시됨 -->
+                                            </div>
+                                            <div class="button-grid">
+                                                <button type="button" class="button-item dev-btn-file-attach">
+                                                    파일첨부
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <!-- 연락처 보기 섹션 -->
+                                        <div class="form-section form-section--contact dev-contact-info-view">
+                                            <div class="section-header">
+                                                <p class="section-title">연락처</p>
+                                                <button type="button" class="btn-text dev-btn-contact-edit">
+                                                    수정
+                                                </button>
+                                            </div>
+                                            <div class="contact-info">
+                                                <ul class="contact-list">
+                                                    <li class="contact-item">
+                                                        <span class="contact-label">휴대폰</span>
+                                                        <p class="contact-value">010-1234-5678</p>
+                                                    </li>
+                                                    <li class="contact-item">
+                                                        <span class="contact-label">이메일</span>
+                                                        <p class="contact-value">example@gmail.com</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- 연락처 수정 섹션 -->
+                                        <div class="form-section form-section--contact dev-contact-info-edit" style="display:none;">
+                                            <div class="section-header">
+                                                <p class="section-title">연락처</p>
+                                                <button type="button" class="btn-text done dev-btn-contact-done">
+                                                    완료
+                                                </button>
+                                            </div>
+                                            <div class="contact-input-list">
+                                                <div class="input-field">
+                                                    <div class="input-wrapper">
+                                                        <input type="tel" id="modal-phone" class="jkPhoneInp filled" placeholder="" value="010-1234-5678">
+                                                        <label for="modal-phone" class="input-label" style="display: none;">휴대폰</label>
+                                                        <button type="button" class="input-clear"></button>
+                                                    </div>
+                                                    <div class="field-helper">
+                                                        <div class="error-message" style="display:none;">
+                                                            휴대폰 번호를 다시 확인해 주세요.
+                                                        </div>
+                                                        <div class="checkbox-field">
+                                                            <input type="checkbox" id="modal-chkForeign" name="chkForeign">
+                                                            <label for="modal-chkForeign">해외거주</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="input-field">
+                                                    <div class="input-wrapper">
+                                                        <input type="email" id="modal-email" class="jkAppEmail filled" placeholder="" value="example@gmail.com">
+                                                        <label for="modal-email" class="input-label" style="display: none;">이메일</label>
+                                                        <button type="button" class="input-clear"></button>
+                                                    </div>
+                                                    <div class="field-helper">
+                                                        <div class="error-message" style="display:none;">
+                                                            이메일 정보가 정확하지 않습니다.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 안내사항 섹션 -->
+                                        <div class="form-section form-section--notice">
+                                            <div class="notice-box">
+                                                <ul class="notice-list">
+                                                    <li class="notice-item">
+                                                        개인정보 파일은 사전동의 없이 삭제될 수 있습니다.
+                                                    </li>
+                                                    <li class="notice-item">
+                                                        제출서류는 채용 마감 후 90일까지 지원기업에게 제공됩니다.
+                                                    </li>
+                                                    <li class="notice-item">
+                                                        제출에 동의할 경우에만 [지원하기] 버튼을 클릭해 주세요.
+                                                    </li>
+                                                    <li class="notice-item">
+                                                        동의하지 않을 경우 입사지원이 불가능합니다.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="page-footer">
+                                    <button type="button" class="footer-btn dev-btn-apply">
+                                        지원하기
+                                    </button>
+                                </div>
+
+                                <!-- 파일첨부 layer popup -->
+                                <div class="layer-popup file-attach-sheet dev-file-attach-popup">
+                                    <div class="layer-popup-dim"></div>
+                                    <div class="layer-popup-container">
+                                        <div class="header">
+                                            <h2 class="title">파일첨부</h2>
+                                            <button type="button" class="close-btn" aria-label="닫기">×</button>
+                                        </div>
+                                        <div class="content">
+                                            <div class="attach-type-toggle">
+                                                <button type="button" class="toggle-btn toggle-btn--file dev-toggle-btn-file active" data-type="file">
+                                                    <span class="toggle-text">파일추가</span>
+                                                </button>
+                                                <button type="button" class="toggle-btn toggle-btn--url dev-toggle-btn-url" data-type="url">
+                                                    <span class="toggle-text">URL</span>
+                                                </button>
+                                            </div>
+                                            <div class="attach-input-wrapper">
+                                                <div class="attach-input-file dev-input-file-wrapper" id="modal-input-file-wrapper">
+                                                    <input type="file" id="modal-file-input" class="file-input dev-file-input" style="display: none;">
+                                                    <button type="button" class="file-select-btn dev-file-select-btn" id="modal-file-select-btn">
+                                                        파일을 선택해 주세요.
+                                                    </button>
+                                                </div>
+                                                <div class="input-field dev-input-url-wrapper" id="modal-input-url-wrapper" style="display: none;">
+                                                    <div class="input-wrapper">
+                                                        <input type="text" id="modal-url-input" class="dev-url-input filled" placeholder="" value="https://">
+                                                        <label for="modal-url-input" class="input-label" style="display: none;">URL</label>
+                                                        <button type="button" class="input-clear"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="attach-category">
+                                                <div class="category-column">
+                                                    <label class="category-option selected">
+                                                        <input type="radio" name="modal-attach-category" value="cover-letter" class="category-radio" checked>
+                                                        <span class="category-label">자기소개서</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layer-popup-footer">
+                                            <div class="buttons-wrapper">
+                                                <button type="button" class="sheet-btn gray btn-cancel">취소</button>
+                                                <button type="button" class="sheet-btn blue btn-confirm" data-custom-handler="true">확인</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </main>
     </body>
     <script src="../../static/js/experience/training-program.js"></script>
