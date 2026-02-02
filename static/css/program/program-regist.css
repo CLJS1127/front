@@ -20,6 +20,11 @@
     src: local("Pretendard Bold");
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    cursor: pointer;
+}
+
 html, body {
     width: 100%;
     margin: 0;
@@ -544,6 +549,7 @@ a:hover, a:active, a:focus {
     vertical-align: middle;
     align-items: center;
     font-size: 16px;
+    gap: 3px;
 }
 
 
@@ -586,8 +592,8 @@ a:hover, a:active, a:focus {
     margin-top: 10px;
     margin-right: 4px;
     padding: 9px 10px 8px 9px;
-    border: 1px solid #f0f3f9;
-    background: #f0f3f9;
+    border: 1px solid #E8F5E9;
+    background: #E8F5E9;
     font: 13px 돋움, Dotum, sans-serif;
     color: #333;
     vertical-align: top;
@@ -608,8 +614,8 @@ a:hover, a:active, a:focus {
 }
 
 .recommend-items-btn:hover {
-    border: 1px solid #c3d2f0;
-    background-color: #e3e9f4;
+    border: 1px solid #A8D5BA;
+    background-color: #A8D5BA;
 }
 
 .recommend-items__list {
@@ -629,8 +635,8 @@ a:hover, a:active, a:focus {
 
 .recommend-item:hover {
     background: #f6fafd;
-    border-color: #39f;
-    color: #39f;
+    border-color: #7BA882;
+    color: #7BA882;
 }
 
 /* Checkbox Group */
@@ -930,6 +936,7 @@ input {
 
 .input-field--date {
     width: 140px;
+    
 }
 
 .input-field--address {
@@ -1462,7 +1469,7 @@ input {
     top: 100%;
     left: 0;
     width: 100%;
-    border: 1px solid #565d79;
+    border: 1px solid #7BA882;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1481,7 +1488,7 @@ li {
 }
 
 .selWrap .selType .selTypeList .selected a, .selWrap .selType .selTypeList .selected button, .selWrap .selType .selTypeList button:hover {
-    color: #39f;
+    color: #7BA882;
 }
 
 .selWrap .selType .selTypeList button {
@@ -1622,7 +1629,7 @@ li {
 }
 
 .selWrap .selType .selTypeList .selected a, .selWrap .selType .selTypeList .selected button, .selWrap .selType .selTypeList button:hover {
-    color: #39f;
+    color: #7BA882;
 }
 
 .selWrap .selType .selTypeList button {
@@ -2078,9 +2085,9 @@ body.se2_inputarea .tempate-detailed-summary-root.pc {
 
 .Form-Submit-button {
     width: 128px;
-    border: 1px solid #ff551c;
+    border: 1px solid #7BA882;
     color: #fff;
-    background-color: #f63;
+    background-color: #006E3F;
 }
 
 .save-bar-buttons button + button {

@@ -33,7 +33,7 @@
                                 <div class="input-search">
                                     <input type="text" class="input-search__field" placeholder="직무를 입력해 주세요">
                                 </div>
-                                <div class="input-search-result" style="display: none;">
+                                <!-- <div class="input-search-result" style="display: none;">
                                     <div class="text-wrap devNoneList">
                                         <p>검색결과가 없습니다.</p>
                                     </div>
@@ -50,7 +50,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <p class="form-row__help-text">선택 직무 기준으로 채용공고 검색결과가 제공됩니다.</p>
+                                <p class="form-row__help-text">선택 직무 기준으로 채용공고 검색결과가 제공됩니다.</p> -->
 
                             </div>
 
@@ -65,7 +65,7 @@
                                             <li class="subItem">                                
                                                 <span class="inr">                                    
                                                     <span class="devItemText">Excel</span>                                    
-                                                    <button type="button" class="spRegA btnItemDel devItemDel" data-item-code="1000175">
+                                                    <button type="button" class="spRegA btnItemDel devItemDel" data-item-code="1000175" style="padding-top: 5px;">
                                                         <span class="skip">삭제</span>
                                                     </button>                                
                                                 </span>                              
@@ -363,11 +363,15 @@
                                     </div>
                                     <div class="date-range-input">
                                         <div class="input-field-wrap">
-                                            <input type="text" class="input-field input-field--date" value="2026.01.30(금)" readonly="readonly">
+                                            <input  type="date"
+                                         class="input-field input-field--date" id="start-date" name="startDate" value="">
                                         </div>
                                         <span class="date-separator">~</span>
                                         <div class="input-field-wrap">
-                                            <input type="text" class="input-field input-field--date" value="2026.01.30(금)" readonly="readonly">
+                                            <input  type="date"
+      id="end-date"
+      name="endDate"
+       class="input-field input-field--date" value="" >
                                         </div>
                                         <select class="select-field select-field--small">
                                             <option value="">선택</option>
@@ -638,17 +642,13 @@
                         </div>
                         <div class="regTxTop">
                             <div class="editTitleBx">
-                                <button type="button" class="btn_template_insert spRegB" id="devTemplateDataLoadBtn">입력한 내용으로 적용하기 </button>
+                                <button type="button" class="btn_template_insert spRegB" id="devTemplateDataLoadBtn">직접 내용 입력하기 </button>
                                 <p class="tx editTitleTx">담당업무&nbsp;및&nbsp;상세내용을 입력하여 상세요강을 채워주세요.<br>기업의 로고, 이미지, 상세요강을 포함한 콘텐츠는 제휴를 통해 외부에 게시될 수 있습니다. 연락처 정보는 인사담당자 항목에 입력해주세요.</p>
                             </div>
                         </div>
 
                         <div class="regEditAreaWrap">
                             <input type="hidden" name="AGI_Entity.Detail_Gdln_Tmplt_Code" value="10">
-                            <div class="regEditTab">
-
-                                <a href="javascript:;" data-tab="direct" class="tab active">직접입력</a>
-                            </div>
                             <div class="regEditArea">
 
                                 <div class="regEditWrap">
@@ -703,7 +703,6 @@
         <div class="save-bar-wrap">
             <div class="save-bar-inner">
                 <div class="save-bar-buttons">
-                    <button class="PreSave-button">임시저장</button>
                     <button class="Form-Submit-button">등록완료</button>
                 </div>
             </div>
