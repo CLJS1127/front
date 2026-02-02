@@ -52,6 +52,9 @@ const mySwiper = new Swiper(".my-list-wrap", {
         delay: 3000,
         disableOnInteraction: false,
     },
+    // 탭 전환 시 크기 재계산을 위한 옵션
+    observer: true,
+    observeParents: true,
 });
 
 // 체험공고 슬라이더 (instance-swipwe-6)
@@ -68,6 +71,9 @@ const smartfitSwiper = new Swiper(".instance-swipwe-6", {
         nextEl: ".instance-next6",
         prevEl: ".instance-prev6",
     },
+    // 탭 전환 시 크기 재계산을 위한 옵션
+    observer: true,
+    observeParents: true,
 });
 
 // 기술블로그 슬라이더 (instance-swipwe-3)
@@ -84,6 +90,9 @@ const blogSwiper = new Swiper(".instance-swipwe-3", {
         nextEl: ".instance-next3",
         prevEl: ".instance-prev3",
     },
+    // 탭 전환 시 크기 재계산을 위한 옵션
+    observer: true,
+    observeParents: true,
 });
 
 // QnA 슬라이더 (instance-swipwe-5)
@@ -99,6 +108,9 @@ const qnaSwiper = new Swiper(".instance-swipwe-5", {
         nextEl: ".instance-next5",
         prevEl: ".instance-prev5",
     },
+    // 탭 전환 시 크기 재계산을 위한 옵션
+    observer: true,
+    observeParents: true,
 });
 
 // 기업 체험 공채 슬라이더 (1000대 기업) - 무한 루프
