@@ -132,30 +132,7 @@
                                     <p class="detail">콘텐츠기획</p>
                                 </div>
 
-                                <div class="my-status-list">
-                                    <h5 class="list-title">보유스킬</h5>
-                                    <div class="expand">
-                                        <input
-                                            type="checkbox"
-                                            class="toggle-checkbox"
-                                            id="skill"
-                                        />
-                                        <label for="skill" class="toggle-expand"
-                                            ><span class="blind"
-                                                >더보기</span
-                                            ></label
-                                        >
-                                        <ul class="skill-list expand-list">
-                                            <li>JAVA</li>
-                                            <li>MySQL</li>
-                                            <li>Git</li>
-                                            <li>Spring Boot</li>
-                                            <li>API</li>
-                                            <li>Python</li>
-                                            <li>MariaDB</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -1612,6 +1589,97 @@
                 <!-- Lnb Area //-->
             </section>
         </div>
+
+        <!-- 보유스킬 선택 모달 -->
+<div class="popup popupSkill hidden" aria-hidden="true">
+    <div class="popupContainerWrap">
+        <div class="popupHeader">
+            <span class="dev-all-skill-title">백엔드개발자</span> 스킬 전체보기<span class="pagination"></span>
+        </div>
+        <div class="popupContainer">
+            <div class="plus-keyword-wrap">
+                <div class="keyword-list">
+<button type="button" class="list-btn dev-skill-item" data-name="JAVA"><span>JAVA</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="MySQL"><span>MySQL</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="AWS"><span>AWS</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Git"><span>Git</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="끈기"><span>끈기</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="RDBMS"><span>RDBMS</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="JPA"><span>JPA</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Spring Boot"><span>Spring Boot</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Docker"><span>Docker</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="관찰력"><span>관찰력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="MongoDB"><span>MongoDB</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="NoSQL"><span>NoSQL</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="API"><span>API</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Python"><span>Python</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="노력"><span>노력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="MariaDB"><span>MariaDB</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="kubernetes"><span>kubernetes</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Spring"><span>Spring</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="리더십"><span>리더십</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="PHP"><span>PHP</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="SQL"><span>SQL</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="ORM"><span>ORM</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="MyBatis"><span>MyBatis</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="실행력"><span>실행력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Go"><span>Go</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Jenkins"><span>Jenkins</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Jira"><span>Jira</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Kafka"><span>Kafka</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="분석력"><span>분석력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="GitHub"><span>GitHub</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="MSA"><span>MSA</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="OracleDB"><span>OracleDB</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Nginx"><span>Nginx</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="의사소통"><span>의사소통</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Hibernate"><span>Hibernate</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="JWT"><span>JWT</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="풀스택"><span>풀스택</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="응용력"><span>응용력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="SVN"><span>SVN</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Elasticsearch"><span>Elasticsearch</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="집중력"><span>집중력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Hadoop"><span>Hadoop</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Slack"><span>Slack</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="자기개발"><span>자기개발</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="SOAP"><span>SOAP</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Nest.js"><span>Nest.js</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="GitLab"><span>GitLab</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="이해력"><span>이해력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="JSON"><span>JSON</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="JSTL"><span>JSTL</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="적극성"><span>적극성</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Redux"><span>Redux</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="통찰력"><span>통찰력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="IntelliJ"><span>IntelliJ</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="QueryDSL"><span>QueryDSL</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="협동심"><span>협동심</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="책임감"><span>책임감</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Gradle"><span>Gradle</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="경쟁력"><span>경쟁력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Postman"><span>Postman</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="학습능력"><span>학습능력</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="전자정부표준프레임워크"><span>전자정부표준프레임워크</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="정보처리기사 자격"><span>정보처리기사 자격</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="전문성"><span>전문성</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Express.js"><span>Express.js</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="React"><span>React</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="Node.js"><span>Node.js</span></button>
+<button type="button" class="list-btn dev-skill-item" data-name="TypeScript"><span>TypeScript</span></button>
+</div>
+            </div>
+        </div>
+        <div class="popupFooter">
+            <div class="btn-wrap">
+                <button type="button" class="btn cancel">취소</button>
+                <button type="button" class="btn check">확인</button>
+            </div>
+        </div>
+        <button type="button" class="button buttonClose is-event is-popup-hidden" data-target=".popupSkill">닫기</button>
+    </div>
+</div>
+
         <!-- 프로필 사진 편집 모달 -->
 <div class="modal-overlay" id="profileModal">
     <div class="modal-content">
