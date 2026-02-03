@@ -239,7 +239,7 @@ address, caption, em {
     white-space: nowrap;
     max-width: 272px;
     padding-right: 15px;
-    background: url("https://i.jobkorea.kr/content/images/corporate/main_v2/arrow_10x17_white.png") no-repeat 100%;
+    background: url("/static/images/corporate/arrow_10x17_white.png") no-repeat 100%;
 }
 /* .right-menu-list:last-child */
 
