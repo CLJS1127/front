@@ -52,9 +52,6 @@ const programDatas = document.querySelectorAll(
     ".recruit-section .data-box ul li",
 );
 
-// 사이드바 고정
-const rightBanner = document.querySelector(".right-banner");
-
 // 이벤트
 // 서비스 Q&A 모달
 // 이전/다음 버튼
@@ -163,11 +160,4 @@ programDatas.forEach((data, i) => {
     data.addEventListener("mouseleave", (e) => {
         data.style.transform = "translateY(0px)";
     });
-});
-
-// 사이드바 고정
-window.addEventListener("scroll", (e) => {
-    window.scrollY > 278
-        ? rightBanner.classList.add("fixed")
-        : rightBanner.classList.remove("fixed");
 });
