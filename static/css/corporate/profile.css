@@ -269,7 +269,7 @@ address, caption, em {
 }
 .infoBtn, .infoBtnB:before, .infoBtnA:after, .infoBtnM:before, .infoBtnM:after {
     display: inline-block;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/info/info_sp_btn.png") no-repeat;
+    background: url("/static/images/corporate/info_sp_btn.png") no-repeat;
     vertical-align: middle;
     box-sizing: border-box;
 }
@@ -443,7 +443,7 @@ address, caption, em {
 }
 #frmLogo .infoIcn, #frmLogo .infoIcnB:before, #frmLogo .infoIcnA:after, #frmLogo .infoIcnM:before, #frmLogo .infoIcnM:after {
     display: inline-block;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/info/info_sp_icn.png") no-repeat;
+    background: url("/static/images/corporate/info_sp_icn.png") no-repeat;
     line-height: normal;
     vertical-align: middle;
 }
@@ -623,7 +623,7 @@ address, caption, em {
 }
 .mtcBtn, .mtcBtnB:before, .mtcBtnA:after, .mtcBtnM:before, .mtcBtnM:After {
     display: inline-block;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/common/mtc_sp_btn.png?202007220000") no-repeat;
+    background: url("/static/images/corporate/mtc_sp_btn.png") no-repeat;
     box-sizing: border-box;
 }
         /* 레이어 영역 */
@@ -728,7 +728,7 @@ address, caption, em {
     overflow: hidden;
     max-height: 207px;
     overflow-y: auto;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/info/bg_sel_list.png?2018012918") repeat-y left bottom;
+    background: url("/static/images/corporate/bg_sel_list.png") repeat-y left bottom;
 }
 .elWrap .selType .selTypeList {
     background-color: #fff;
@@ -1002,7 +1002,7 @@ address, caption, em {
 .artCoWelfare .WelfareType .welfare-list > li > button::after {
     content: "";
     display: inline-block;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/common/icon_close.png") no-repeat;
+    background: url("/static/images/corporate/icon_close\ \(1\).png") no-repeat;
     width: 17px;
     height: 17px;
     margin-left: 10px;
@@ -1142,7 +1142,7 @@ address, caption, em {
     line-height: 20px;
 }
 .inpChk_ui button:before, .inpChk_ui label:before, .spRegA:after, .spRegB:before {
-    background-image: url("https://i.jobkorea.kr/content/images/ver_1/mtc/register/spr.png?2024070200");
+    background-image: url("/static/images/corporate/spr.png");
     background-repeat: no-repeat;
     background-size: 300px 300px;
 }
@@ -1163,7 +1163,7 @@ address, caption, em {
     background-position: 0 -30px;
 }
 .inpChk_ui.size_small.chk label:before {
-    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.59 6.077a.833.833 0 010 1.179l-6.667 6.666a.833.833 0 01-1.212-.035l-3.334-3.75A.833.833 0 015.623 9.03l2.746 3.09 6.042-6.043a.833.833 0 011.179 0z' fill='%23fff'/%3E%3C/svg%3E");
+    background-image: url("/static/images/corporate/size_small.chk-label.svg");
     background-size: 18px;
     border-radius: 3px;
     background-color: #006e3f;
@@ -1428,7 +1428,7 @@ address, caption, em {
 .artCoWelfare .plus button::before {
     content: "";
     display: inline-block;
-    background: url("https://i.jobkorea.kr/content/images/ver_1/common/icon_plus.png") no-repeat;
+    background: url("/static/images/corporate/icon_plus.png") no-repeat;
     width: 9px;
     height: 8px;
 }
@@ -2025,9 +2025,9 @@ address, caption, em {
 #frmAddr .popAddr .popCont #postcode {
     width: 35%;
 }
-#frmAddr .popAddr .popCont #detailAddress, #frmAddr .popAddr .popCont #extraAddress   {
+/* #frmAddr .popAddr .popCont #detailAddress, #frmAddr .popAddr .popCont #extraAddress   {
     width: 41.8%;
-}
+} */
 #frmAddr .popAddr .popCont input[type=button] {
     width: 28%;
     border: 1px solid #006e3f;
