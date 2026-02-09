@@ -448,7 +448,7 @@ table, th, td, input, button {
     padding-left: 0;
 }
 #content .infoContent  .schListsWrap .mtcSchListTb table tbody td .no-team-member-wrap::before {
-    background: url("https://i.jobkorea.kr/content/images/ver_1/mtc/manage/sprite_ver2_img.png") 100% 100% / 100% no-repeat !important;
+    background: url("/static/images/corporate/sprite_ver2_img.png") 100% 100% / 100% no-repeat !important;
 }
 #content .infoContent  .schListsWrap .mtcSchListTb table tbody td .no-team-member-wrap:before {
     content: "";
